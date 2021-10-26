@@ -1,11 +1,41 @@
 #include <iostream>
 #include <dlfcn.h>
 #include <cassert>
+#include <string>
+#include <sstream>
 #include "Interp4Command.hh"
 #include "MobileObj.hh"
 
+#define LINE_SIZE 500
 using namespace std;
 
+/*!
+ * \brief Wykonuje preprocesor na podanym pliku.
+ *
+ * \param[in] NazwaPliku - Nazwa pliku do interpretacji.
+ * \param[out] IStrm4Cmds - Strumień, do którego jest wczytywana zinterpretowana zawartość.
+ * \retval true - jeśli preprocesor został wykonany poprawnie i nastąpiło zamknięcie pliku.
+ * \retval false - Niepowodzenie wykonania.
+ */
+bool ExecPreprocesor(const   char * NazwaPliku, istringstream & IStrm4Cmds )
+{
+  string Cmd4Preproc = "cpp -P ";
+  char Line[LINE_SIZE];
+  ostringstream OTmpStrm;
+
+  Cmd4Preproc += NazwaPliku;
+  FILE * pProc = popen(Cmd4Preproc.c_str(),"r");
+
+  if(!pProc)
+    return false;
+
+  while(fgets(Line,LINE_SIZE,pProc)){
+    OTmpStrm<<Line;
+  }
+
+  IStrm4Cmds.str(OTmpStrm.str());
+  return pclose(pProc) == 0;
+}
 
 int main()
 {
