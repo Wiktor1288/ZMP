@@ -37,26 +37,81 @@ bool ExecPreprocesor(const   char * NazwaPliku, istringstream & IStrm4Cmds )
   return pclose(pProc) == 0;
 }
 
-int main()
+/*!
+ * \brief Wykonuje preprocesor na podanym pliku.
+ *
+ * \param[in] Str4Cmds_read - Nazwa pliku do interpretacji.
+ * 
+ * \retval true - jeśli preprocesor został wykonany poprawnie i nastąpiło zamknięcie pliku.
+ * \retval false - Niepowodzenie wykonania.
+ */
+bool ExecActions(istream &Str4Cmds_read, Interp4Command &Interp){
+
+  string Key_Word;
+
+  Str4Cmds_read >> Key_Word;
+  if(Key_Word == "Move"){
+    if(!Interp.ReadParams(Str4Cmds_read)) return false;
+    cout << "Parametry:" << endl;
+    Interp.PrintCmd();
+  }
+  return true;
+}
+
+int main(int argc, char **argv)
 {
-  void *pLibHnd_Move = dlopen("libInterp4Move.so",RTLD_LAZY);
-  Interp4Command *(*pCreateCmd_Move)(void);
+  if(argc < 2){
+    cerr << "Missed arguments" << endl;
+    return 1;
+  }
+
+ istringstream Istrm4Cmds;
+ if(!ExecPreprocesor(argv[1],Istrm4Cmds)){
+  cerr << "Reading from file failed" << endl;
+  return 2;
+ }
+
+
+
+ void *pLibHnd_Move = dlopen("libInterp4Move.so",RTLD_LAZY);
+ Interp4Command *(*pCreateCmd_Move)(void);
+ void *pFun;
+
+ if(!pLibHnd_Move) {
+    cerr << "!!! Brak biblioteki: Interp4Move.so" << endl;
+    return 3;
+  }
+
+ pFun = dlsym(pLibHnd_Move,"CreateCmd");
+ if (!pFun) {
+    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
+    return 4;
+  }
+
+  pCreateCmd_Move = 
+          *reinterpret_cast<Interp4Command* (**)(void)>(&pFun);
+  Interp4Command *pInterp = pCreateCmd_Move();
+  
+
+
+  if( !ExecActions(Istrm4Cmds,*pInterp) ){
+    cerr << "something wrong!" << endl;
+    return 5;
+  }
+  /*
+  
   void *pLibHnd_Set = dlopen("libInterp4Set.so",RTLD_LAZY);
   Interp4Command *(*pCreateCmd_Set)(void);
   void *pLibHnd_Pause = dlopen("libInterp4Pause.so",RTLD_LAZY);
   Interp4Command *(*pCreateCmd_Pause)(void);
   void *pLibHnd_Rotate = dlopen("libInterp4Rotate.so",RTLD_LAZY);
   Interp4Command *(*pCreateCmd_Rotate)(void);
-  void *pFun;
+ 
   void *sFun;
   void *dFun;
   void *rFun;
 
-  if (!pLibHnd_Move) {
-    cerr << "!!! Brak biblioteki: Interp4Move.so" << endl;
-    return 1;
-  }
-
+ 
 
   pFun = dlsym(pLibHnd_Move,"CreateCmd");
   if (!pFun) {
@@ -160,4 +215,5 @@ if (!pLibHnd_Set) {
   cout << endl;
   delete rCmd;
   dlclose(pLibHnd_Rotate);
+  */
 }
