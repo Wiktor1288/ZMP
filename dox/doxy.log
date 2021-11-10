@@ -8,3 +8,5 @@ Otherwise you run the risk that the wrong font is being used for dot generated g
 warning: The selected output language "polish" has not been updated
 since release 1.8.2.  As a result some sentences may appear in English.
 
+/home/wiktor/Pulpit/ZMP/etap1-zalazek/src/main.cpp:48: warning: The following parameter of ExecActions(istream &Str4Cmds_read, Interp4Command &Interp) is not documented:
+  parameter 'Interp'

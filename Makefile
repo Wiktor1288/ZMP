@@ -22,11 +22,17 @@ LDFLAGS=-Wall
 
 
 
-interp: obj/main.o
-	g++ ${LDFLAGS} -o interp  obj/main.o -ldl
+interp: obj/main.o obj/LibInterface.o obj/Set4LibInterface.o
+	g++ ${LDFLAGS} -o interp  obj/main.o  obj/LibInterface.o obj/Set4LibInterface.o  -ldl
 
-obj/main.o: src/main.cpp inc/Interp4Command.hh
-	g++ -c ${CPPFLAGS} -o obj/main.o src/main.cpp
+obj/main.o: src/main.cpp inc/Interp4Command.hh 
+	g++ -c ${CPPFLAGS} -o obj/main.o src/main.cpp 
+	
+obj/LibInterface.o: src/LibInterface.cpp inc/LibInterface.hh
+	g++ -c ${CPPFLAGS} -o obj/LibInterface.o src/LibInterface.cpp
+
+obj/Set4LibInterface.o: src/Set4LibInterface.cpp inc/Set4LibInterface.hh
+	g++ -c ${CPPFLAGS} -o obj/Set4LibInterface.o src/Set4LibInterface.cpp
 
 clean:
 	rm -f obj/* interp core*

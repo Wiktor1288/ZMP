@@ -40,7 +40,7 @@ void Interp4Rotate::PrintCmd() const
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
    */
-  cout << GetCmdName() << " Obj_A " <<   _angle_speed << _angle_value << " 10" << endl;
+  cout << GetCmdName() << " " << _ObjectName << " " << _angle_speed << " " << _axis_name << " " <<  _angle_value << " " << endl;
 }
 
 
@@ -70,10 +70,8 @@ bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
  */
 bool Interp4Rotate::ReadParams(std::istream& Strm_CmdsList)
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
-  return true;
+  Strm_CmdsList >> _ObjectName >> _angle_speed >> _axis_name >> _angle_value;
+  return !Strm_CmdsList.fail();
 }
 
 

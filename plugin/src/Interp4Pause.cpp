@@ -40,7 +40,7 @@ void Interp4Pause::PrintCmd() const
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
    */
-  cout << GetCmdName() << " Obj_A " << _pause_time  << " 10" << endl;
+  cout << GetCmdName() << " " << _pause_time << " " << endl;
 }
 
 
@@ -70,10 +70,9 @@ bool Interp4Pause::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
  */
 bool Interp4Pause::ReadParams(std::istream& Strm_CmdsList)
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
-  return true;
+
+  Strm_CmdsList >> _pause_time;
+  return !Strm_CmdsList.fail();
 }
 
 

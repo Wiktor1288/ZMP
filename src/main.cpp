@@ -5,6 +5,7 @@
 #include <sstream>
 #include "Interp4Command.hh"
 #include "MobileObj.hh"
+#include "Set4LibInterface.hh"
 
 #define LINE_SIZE 500
 using namespace std;
@@ -17,6 +18,81 @@ using namespace std;
  * \retval true - jeśli preprocesor został wykonany poprawnie i nastąpiło zamknięcie pliku.
  * \retval false - Niepowodzenie wykonania.
  */
+bool ExecPreprocesor(const   char * NazwaPliku, istringstream & IStrm4Cmds );
+
+/*!
+ * \brief Wykonuje preprocesor na podanym pliku.
+ *
+ * \param[in] Str4Cmds_read - Nazwa pliku do interpretacji.
+ * \retval true - jeśli preprocesor został wykonany poprawnie i nastąpiło zamknięcie pliku.
+ * \retval false - Niepowodzenie wykonania.
+ */
+bool ExecActions(istream &Str4Cmds_read, Set4LibInterface &LibInterfaces);
+
+/*!
+ * \brief Funkcja pozwalająca załadować biblioteki do obiektu klasy Set4LibInterface 
+ *
+ * \param[in] LibInterfaces - Nazwa obiektu przechowującego interfejsy wtyczek.
+ * \retval true - Zwracane jeśli operacja załączania bibliotek przebiegła prawidłowo
+ * \retval false - Zwracane jeśli operacja załączania bibliotek przebiegła NIE prawidłowo
+ */
+bool Init_LIBs(Set4LibInterface &LibInterfaces);
+
+int main(int argc, char **argv)
+{
+  Set4LibInterface Set_LibInterfaces;
+  istringstream Istrm4Cmds;
+
+  if(argc < 2){
+    cerr << "Missed arguments" << endl;
+    return 1;
+  }
+
+
+  if(!ExecPreprocesor(argv[1],Istrm4Cmds)){
+    cerr << "Reading from file failed" << endl;
+    return 2;
+  }
+
+  if(!Init_LIBs(Set_LibInterfaces)){
+    cerr << "Opening libs failed" << endl;
+    return 3;
+  }
+  if(!ExecActions(Istrm4Cmds, Set_LibInterfaces)){
+    cerr << "Reading cmd file failed" << endl;
+    return 4;
+  }
+
+}
+
+
+bool ExecActions(istream &Str4Cmds_read, Set4LibInterface &LibInterfaces){
+
+  string Cmd_Word;
+  shared_ptr<LibInterface> Lib_interface_p;
+
+  while(Str4Cmds_read >> Cmd_Word){
+    Lib_interface_p=LibInterfaces.Find_TheInterface(Cmd_Word);
+    if(Lib_interface_p == nullptr){
+      cerr << "Command:  " << Cmd_Word << " doesn't exist" << endl;
+      return false;
+    }
+
+    Interp4Command *Command_p =Lib_interface_p->CreateCmd_p();
+    if (!Command_p->ReadParams(Str4Cmds_read))
+    {
+      cerr << "Reading command " << Cmd_Word << " field" << endl;
+      return false;
+    }
+    cout << "Command: ";
+    Command_p->PrintCmd();
+  }
+
+
+  return true;
+}
+
+
 bool ExecPreprocesor(const   char * NazwaPliku, istringstream & IStrm4Cmds )
 {
   string Cmd4Preproc = "cpp -P ";
@@ -37,183 +113,15 @@ bool ExecPreprocesor(const   char * NazwaPliku, istringstream & IStrm4Cmds )
   return pclose(pProc) == 0;
 }
 
-/*!
- * \brief Wykonuje preprocesor na podanym pliku.
- *
- * \param[in] Str4Cmds_read - Nazwa pliku do interpretacji.
- * 
- * \retval true - jeśli preprocesor został wykonany poprawnie i nastąpiło zamknięcie pliku.
- * \retval false - Niepowodzenie wykonania.
- */
-bool ExecActions(istream &Str4Cmds_read, Interp4Command &Interp){
 
-  string Key_Word;
-
-  Str4Cmds_read >> Key_Word;
-  if(Key_Word == "Move"){
-    if(!Interp.ReadParams(Str4Cmds_read)) return false;
-    cout << "Parametry:" << endl;
-    Interp.PrintCmd();
-  }
-  return true;
-}
-
-int main(int argc, char **argv)
-{
-  if(argc < 2){
-    cerr << "Missed arguments" << endl;
-    return 1;
-  }
-
- istringstream Istrm4Cmds;
- if(!ExecPreprocesor(argv[1],Istrm4Cmds)){
-  cerr << "Reading from file failed" << endl;
-  return 2;
- }
-
-
-
- void *pLibHnd_Move = dlopen("libInterp4Move.so",RTLD_LAZY);
- Interp4Command *(*pCreateCmd_Move)(void);
- void *pFun;
-
- if(!pLibHnd_Move) {
-    cerr << "!!! Brak biblioteki: Interp4Move.so" << endl;
-    return 3;
-  }
-
- pFun = dlsym(pLibHnd_Move,"CreateCmd");
- if (!pFun) {
-    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
-    return 4;
-  }
-
-  pCreateCmd_Move = 
-          *reinterpret_cast<Interp4Command* (**)(void)>(&pFun);
-  Interp4Command *pInterp = pCreateCmd_Move();
+bool Init_LIBs(Set4LibInterface &LibInterfaces){
   
+  if(LibInterfaces.Add_Interface("libs/libInterp4Move.so"))
+    if(LibInterfaces.Add_Interface("libs/libInterp4Rotate.so"))
+      if(LibInterfaces.Add_Interface("libs/libInterp4Set.so"))
+        if(LibInterfaces.Add_Interface("libs/libInterp4Pause.so"))
+          return true;
 
 
-  if( !ExecActions(Istrm4Cmds,*pInterp) ){
-    cerr << "something wrong!" << endl;
-    return 5;
-  }
-  /*
-  
-  void *pLibHnd_Set = dlopen("libInterp4Set.so",RTLD_LAZY);
-  Interp4Command *(*pCreateCmd_Set)(void);
-  void *pLibHnd_Pause = dlopen("libInterp4Pause.so",RTLD_LAZY);
-  Interp4Command *(*pCreateCmd_Pause)(void);
-  void *pLibHnd_Rotate = dlopen("libInterp4Rotate.so",RTLD_LAZY);
-  Interp4Command *(*pCreateCmd_Rotate)(void);
- 
-  void *sFun;
-  void *dFun;
-  void *rFun;
-
- 
-
-  pFun = dlsym(pLibHnd_Move,"CreateCmd");
-  if (!pFun) {
-    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
-    return 1;
-  }
-  pCreateCmd_Move = *reinterpret_cast<Interp4Command* (**)(void)>(&pFun);
-
-  Interp4Command *pCmd = pCreateCmd_Move();
-
-
-if (!pLibHnd_Set) {
-    cerr << "!!! Brak biblioteki: Interp4Set.so" << endl;
-    return 1;
-  }
-
-
-  sFun = dlsym(pLibHnd_Set,"CreateCmd");
-  if (!sFun) {
-    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
-    return 1;
-  }
-  pCreateCmd_Set = *reinterpret_cast<Interp4Command* (**)(void)>(&sFun);
-
-
-  Interp4Command *sCmd = pCreateCmd_Set();
-
-
-
-
-
-  if (!pLibHnd_Pause) {
-    cerr << "!!! Brak biblioteki: Interp4Pause.so" << endl;
-    return 1;
-  }
-
-
-  dFun = dlsym(pLibHnd_Pause,"CreateCmd");
-  if (!dFun) {
-    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
-    return 1;
-  }
-  pCreateCmd_Pause = *reinterpret_cast<Interp4Command* (**)(void)>(&dFun);
-
-  Interp4Command *dCmd = pCreateCmd_Pause();
-
-
-    if (!pLibHnd_Rotate) {
-    cerr << "!!! Brak biblioteki: Interp4Rotate.so" << endl;
-    return 1;
-  }
-
-
-  rFun = dlsym(pLibHnd_Rotate,"CreateCmd");
-  if (!rFun) {
-    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
-    return 1;
-  }
-  pCreateCmd_Rotate = *reinterpret_cast<Interp4Command* (**)(void)>(&rFun);
-
-  Interp4Command *rCmd = pCreateCmd_Rotate();
-
-
-  cout << endl;
-  cout << pCmd->GetCmdName() << endl;
-  cout << endl;
-  pCmd->PrintSyntax();
-  cout << endl;
-  pCmd->PrintCmd();
-  cout << endl;
-  delete pCmd;
-  dlclose(pLibHnd_Move);
-
-  cout << endl;
-  cout << sCmd->GetCmdName() << endl;
-  cout << endl;
-  sCmd->PrintSyntax();
-  cout << endl;
-  sCmd->PrintCmd();
-  cout << endl;
-  delete sCmd;
-  dlclose(pLibHnd_Set);
-
-
-  cout << endl;
-  cout << dCmd->GetCmdName() << endl;
-  cout << endl;
-  dCmd->PrintSyntax();
-  cout << endl;
-  dCmd->PrintCmd();
-  cout << endl;
-  delete dCmd;
-  dlclose(pLibHnd_Pause);
-
-  cout << endl;
-  cout << rCmd->GetCmdName() << endl;
-  cout << endl;
-  rCmd->PrintSyntax();
-  cout << endl;
-  rCmd->PrintCmd();
-  cout << endl;
-  delete rCmd;
-  dlclose(pLibHnd_Rotate);
-  */
+  return false;
 }
