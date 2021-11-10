@@ -24,12 +24,14 @@ Interp4Command* CreateCmd(void)
   return Interp4Move::CreateCmd();
 }
 
-
+ Interp4Move::~Interp4Move(){
+   cout <<"\n Usuwam Move\n";
+ }
 /*!
  *
  */
 Interp4Move::Interp4Move(): _Speed_mmS(0), _Distance_m(0)
-{}
+{cout <<"\n Tworze Move\n";}
 
 
 /*!

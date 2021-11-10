@@ -48,6 +48,7 @@ class Interp4Move: public Interp4Command {
    * \brief
    */
   Interp4Move();  
+  ~Interp4Move();
   /*!
    * \brief Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)
    */

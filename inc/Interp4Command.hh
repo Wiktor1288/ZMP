@@ -12,9 +12,11 @@
  */
 
 /*!
- * \brief Modeluje abstrakcyjne polecenie dla robota mobilnego
+ * \file
+ * \brief Zawiera definicję klasy Interp4Command
  *
- *  Klasa modeluje ...
+ * Plik zawiera definicję klasy Interp4Command.
+ * jest to definicja klasy, która przechowuje  plugin do danej komendy
  */
  class Interp4Command {
   public:

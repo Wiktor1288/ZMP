@@ -15,6 +15,15 @@ using namespace std;
 */
 typedef  map<string, shared_ptr<LibInterface>>  Map_LibIter;
 
+
+/*!
+ * \file
+ * \brief Zawiera definicję klasy Set4LibInterface
+ *
+ * Plik zawiera definicję klasy Set4LibInterface.
+ * jest to definicja klasy, która przechowuje zbiór wtyczek zapisanych w postaci klasy Interp4Command
+ */
+
 class Set4LibInterface{
     /*!
     * \brief Obiekt typu Mapa przechowujący interfejsy klasy LibInterface
