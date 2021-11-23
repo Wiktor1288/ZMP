@@ -66,6 +66,31 @@
         */
        std::string  _Name;
 
+
+       /*!
+        * \brief Przesunięcie geometrycznego środka obiektu
+        *
+        * jest to zmiena która definiuje przesunięcie geometrycznego środka obiektu. 
+        */
+       Vector3D _shift;
+       
+
+       /*!
+        * \brief Zmiena przechowująca współczynnik skali
+        *
+        * Zawiera współczynniki skali względem poszczególnych osi. Wartości te nie mogą być ujemne. Dopuszczalny jest przypadek,
+        * gdy wszystkie współczynniki skali będą równe 0. 
+        */
+       Vector3D _scale;
+
+
+       /*!
+        * \brief Tablica przechowująca kolor obiektu 
+        *
+        * Tablica przechowująca kolor obiektu zgodnie z modelem RGB 
+        */
+       int _colour[3];
+
      public:
       /*!
        * \brief Udostępia wartość kąta \e roll.
@@ -148,6 +173,50 @@
 	* Udostępnia nazwę obiektu w trybie tylko do odczytu.
         */
        const std::string & GetName() const { return _Name; }
+
+
+      /*!
+       * \brief Metoda zapisująca kolor do tablicy z napisu
+       *
+       *  Zapisuje wartości poszczególnych składowych koloru opisanego przez model RGB
+       *  \param[in] colour_str - napis zwierajacy informacje o kolorze zgodnie z modelem RGB
+       */
+        void SetColourRGB(const string colour_str){
+       
+                std::istringstream iStrm;
+
+                IStrm.str(colour_str);
+                IStrm >> this->_colour[0] >> this->_colour[1] >> this->_colour[2];
+       }
+
+      /*!
+       * \brief Metoda pozwalająca wypełnić zmienną MobileObj::_shift
+       *
+       *  Inicjalizuje wartość zmiennej MobileObj::_shift
+       *  \param[in] _shift - zmiena inicjaluzjąca zmienną MobileObj::_shift
+       *
+       */
+        void SetShift(const string _shift){
+       
+                this->_shift=_shift;
+       }
+
+
+
+      /*!
+       * \brief Metoda pozwalająca wypełnić zmienną  MobileObj::_scale
+       *
+       *  Inicjalizuje wartość zmiennej MobileObj::_scale 
+       *  \param[in] _scale - dane zapisywane do zmiennej MobileObj::_scale
+       */
+        void SetScale(const Vector3D _scale){
+                
+                this->_scale=scale;
+       }
+
+
+
+
     };
 
 
