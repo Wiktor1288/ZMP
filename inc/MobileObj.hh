@@ -4,7 +4,7 @@
 
 #include <string>
 #include "Vector3D.hh"
-
+#include <sstream>
 
 /*!
  * \file
@@ -181,12 +181,12 @@
        *  Zapisuje wartości poszczególnych składowych koloru opisanego przez model RGB
        *  \param[in] colour_str - napis zwierajacy informacje o kolorze zgodnie z modelem RGB
        */
-        void SetColourRGB(const string colour_str){
+        void SetColourRGB(const std::string colour_str){
        
                 std::istringstream iStrm;
 
-                IStrm.str(colour_str);
-                IStrm >> this->_colour[0] >> this->_colour[1] >> this->_colour[2];
+                iStrm.str(colour_str);
+                iStrm >> this->_colour[0] >> this->_colour[1] >> this->_colour[2];
        }
 
       /*!
@@ -196,7 +196,7 @@
        *  \param[in] _shift - zmiena inicjaluzjąca zmienną MobileObj::_shift
        *
        */
-        void SetShift(const string _shift){
+        void SetShift(const Vector3D _shift){
        
                 this->_shift=_shift;
        }
@@ -211,7 +211,7 @@
        */
         void SetScale(const Vector3D _scale){
                 
-                this->_scale=scale;
+                this->_scale=_scale;
        }
 
 

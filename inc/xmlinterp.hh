@@ -24,6 +24,8 @@
  */
 class XMLInterp4Config : public xercesc::DefaultHandler {
   public:
+
+  Configuration & _config;
    /*!
     * \brief Inicjalizuje obiekt i kojarzy go z listą poleceń robota
     */

@@ -14,9 +14,9 @@ using namespace std;
  * Konstruktor klasy. Tutaj należy zainicjalizować wszystkie
  * dodatkowe pola.
  */
-XMLInterp4Config::XMLInterp4Config(Configuration &rConfig)
-{
-}
+XMLInterp4Config::XMLInterp4Config(Configuration &rConfig) : _config{rConfig}
+{}
+
 
 
 /*!
@@ -65,7 +65,7 @@ void XMLInterp4Config::ProcessLibAttrs(const xercesc::Attributes  &rAttrs)
 
  cout << "  Nazwa biblioteki: " << sLibName << endl;
 
- // Tu trzeba wpisać własny kod ...
+
 
  xercesc::XMLString::release(&sParamName);
  xercesc::XMLString::release(&sLibName);
