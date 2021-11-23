@@ -69,6 +69,7 @@ int main(int argc, char **argv)
   Set4LibInterface Set_LibInterfaces;
   istringstream Istrm4Cmds;
   Configuration   Config;
+  cout << "/n tuuu"<< &Set_LibInterfaces <<endl;
 
   if (!ReadFile("config/config.xml",Config)) return 1;
 

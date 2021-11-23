@@ -6,6 +6,8 @@ using namespace std;
 
 shared_ptr<LibInterface> Set4LibInterface::Find_TheInterface(const string& Name){
     const string& Plugin_Name = "libs/libInterp4" + Name + ".so";
+    cout << "/n tuuu"<< &Set4LibInterfaces <<endl;
+
     
     auto it = Set4LibInterfaces.find(Plugin_Name);
     if (it == Set4LibInterfaces.end()){
