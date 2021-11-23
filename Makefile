@@ -22,8 +22,8 @@ LDFLAGS=-Wall
 
 
 
-interp: obj/main.o obj/LibInterface.o obj/Set4LibInterface.o obj/xmlinterp.o
-	g++ ${LDFLAGS} -o interp  obj/main.o  obj/LibInterface.o obj/Set4LibInterface.o  obj/xmlinterp.o -ldl -lxerces-c
+interp: obj/main.o obj/LibInterface.o obj/Set4LibInterface.o obj/xmlinterp.o obj/Scene.o obj/Configuration.o
+	g++ ${LDFLAGS} -o interp  obj/main.o  obj/LibInterface.o obj/Set4LibInterface.o  obj/xmlinterp.o obj/Scene.o obj/Configuration.o -ldl -lxerces-c
 	
 
 obj/main.o: src/main.cpp inc/Interp4Command.hh 
@@ -37,6 +37,12 @@ obj/Set4LibInterface.o: src/Set4LibInterface.cpp inc/Set4LibInterface.hh
 	
 obj/xmlinterp.o: src/xmlinterp.cpp inc/xmlinterp.hh
 	g++ -c ${CPPFLAGS} -o obj/xmlinterp.o src/xmlinterp.cpp
+
+obj/Configuration.o: src/Configuration.cpp inc/Configuration.hh
+	g++ -c ${CPPFLAGS} -o obj/Configuration.o src/Configuration.cpp
+	
+obj/Scene.o: src/Scene.cpp inc/Scene.hh
+	g++ -c ${CPPFLAGS} -o obj/Scene.o src/Scene.cpp
 
 
 
