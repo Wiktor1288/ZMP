@@ -1,0 +1,17 @@
+<map id="MobileObj.hh" name="MobileObj.hh">
+<area shape="rect" id="node1" title="Zawiera definicję klasy MobileObj." alt="" coords="494,5,591,32"/>
+<area shape="rect" id="node2" href="$Interp4Command_8hh.html" title="Definicja klasy Interp4Command." alt="" coords="360,80,499,107"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title=" " alt="" coords="172,304,247,331"/>
+<area shape="rect" id="node9" href="$Interp4Move_8cpp.html" title=" " alt="" coords="31,229,150,256"/>
+<area shape="rect" id="node11" href="$Interp4Pause_8cpp.html" title=" " alt="" coords="687,229,809,256"/>
+<area shape="rect" id="node13" href="$Interp4Rotate_8cpp.html" title=" " alt="" coords="835,229,959,256"/>
+<area shape="rect" id="node15" href="$Interp4Set_8cpp.html" title=" " alt="" coords="552,229,659,256"/>
+<area shape="rect" id="node3" href="$LibInterface_8hh.html" title="Deklaracja klasy LibInterface." alt="" coords="247,155,355,181"/>
+<area shape="rect" id="node8" href="$Interp4Move_8hh.html" title="Definicja klasy Interp4Move." alt="" coords="61,155,171,181"/>
+<area shape="rect" id="node10" href="$Interp4Pause_8hh.html" title="Definicja klasy Interp4Set." alt="" coords="503,155,619,181"/>
+<area shape="rect" id="node12" href="$Interp4Rotate_8hh.html" title="Definicja klasy Interp4Rotate." alt="" coords="695,155,812,181"/>
+<area shape="rect" id="node14" href="$Interp4Set_8hh.html" title="Definicja klasy Interp4Set." alt="" coords="380,155,479,181"/>
+<area shape="rect" id="node4" href="$Set4LibInterface_8hh.html" title="Zawiera definicję klasy Set4LibInterface." alt="" coords="386,229,521,256"/>
+<area shape="rect" id="node7" href="$LibInterface_8cpp.html" title=" " alt="" coords="247,229,361,256"/>
+<area shape="rect" id="node6" href="$Set4LibInterface_8cpp.html" title=" " alt="" coords="382,304,525,331"/>
+</map>

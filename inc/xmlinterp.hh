@@ -3,12 +3,13 @@
 
 #include <string>
 #include <xercesc/util/XMLString.hpp>
-//#include <xercesc/sax2/XMLReaderFactory.hpp>
+#include <xercesc/sax2/XMLReaderFactory.hpp>
 #include <xercesc/util/PlatformUtils.hpp>
 #include <xercesc/sax/Locator.hpp>
-
 #include <xercesc/sax2/Attributes.hpp>
 #include <xercesc/sax2/DefaultHandler.hpp>
+#include <xercesc/sax2/SAX2XMLReader.hpp>
+
 
 //XERCES_CPP_NAMESPACE_USE
 
@@ -86,4 +87,7 @@ class XMLInterp4Config : public xercesc::DefaultHandler {
   private:
 };
 
+
+
+bool ReadFile(const char* sFileName, Configuration &rConfig);
 #endif

@@ -1,0 +1,10 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,125,56,151"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#ad59fb870291089ae4b3a4894d86bd973" title="Wykonuje preprocesor na podanym pliku." alt="" coords="117,73,211,99"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a8f82d78ce6f79fa0fb91cc1de0f83766" title="Wykonuje preprocesor na podanym pliku." alt="" coords="104,125,224,151"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a8be5ff56e9f5cc5b90a12f8ba1153811" title="Funkcja pozwalająca załadować biblioteki do obiektu klasy Set4LibInterface." alt="" coords="127,177,201,203"/>
+<area shape="rect" id="node3" href="$classSet4LibInterface.html#a5b237d011a024946f3c3146aa30bd678" title="Metoda pozwalająca na wyszukanie konkretego interfejsu." alt="" coords="299,5,448,47"/>
+<area shape="rect" id="node4" href="$classInterp4Command.html#a08fbbf2a70cdac46930b0eba6f5f361c" title="Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)." alt="" coords="283,71,464,98"/>
+<area shape="rect" id="node5" href="$classInterp4Command.html#a3e15ef01af10fa8961926fd9b0274ab8" title="Czyta wartości parametrów danego polecenia." alt="" coords="272,122,475,149"/>
+<area shape="rect" id="node8" href="$classSet4LibInterface.html#a9656d02980fcd2c38bd8a089b298e287" title="Metoda pozwalająca na dodanie nowego interfejsu." alt="" coords="300,173,447,215"/>
+</map>

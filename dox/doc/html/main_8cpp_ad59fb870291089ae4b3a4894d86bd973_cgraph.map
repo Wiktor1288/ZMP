@@ -1,0 +1,6 @@
+<map id="ExecActions" name="ExecActions">
+<area shape="rect" id="node1" title="Wykonuje preprocesor na podanym pliku." alt="" coords="5,71,100,98"/>
+<area shape="rect" id="node2" href="$classSet4LibInterface.html#a5b237d011a024946f3c3146aa30bd678" title="Metoda pozwalająca na wyszukanie konkretego interfejsu." alt="" coords="175,5,324,47"/>
+<area shape="rect" id="node3" href="$classInterp4Command.html#a08fbbf2a70cdac46930b0eba6f5f361c" title="Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)." alt="" coords="159,71,340,98"/>
+<area shape="rect" id="node4" href="$classInterp4Command.html#a3e15ef01af10fa8961926fd9b0274ab8" title="Czyta wartości parametrów danego polecenia." alt="" coords="148,122,351,149"/>
+</map>
