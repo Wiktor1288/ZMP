@@ -34,14 +34,18 @@ class Scene{
 private:
 
     /*!
-     * \brief konstruktor bezparametryczny klasy Scene
+     * \brief konstruktor paramertyczy klasy Scene
+     *
+     * \param [in] List_of_object lista obiektów jąk ma być zainicjalizowana lista Scene::List_of_object
      */
-    Scene();
+    Scene(Map_MobileObj &List_of_object);
 
     /*!
      * \brief dekonstruktor  klasy Scene
      */
-    ~Scene();
+    ~Scene(){
+
+    }
 
 
     /*!
@@ -51,7 +55,15 @@ private:
      * \retval shared_ptr<MobileObj> - wskaznik na wyszukany obiekt, zwracany w przypadku jego znalezienia
      * \retval nullptr -zwracany  w przypadku jego NIE znalezienia.
      */
-    shared_ptr<MobileObj> FindMobileObj(string Name_object);
+    shared_ptr<MobileObj> FindMobileObj(const string Name_object);
+
+
+    /*!
+     * \brief Metoda pozwalająca na dadanie nowego pojedyńczego obiektu do listy Scene::List_of_object
+     * 
+     * \param [in] Name_object - nazwa szukanego  obiektu
+     */
+    void AddObjToList(const std::string Name_object);
 
 };
 

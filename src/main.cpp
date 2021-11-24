@@ -57,7 +57,7 @@ bool ExecActions(istream &Str4Cmds_read, Set4LibInterface &LibInterfaces);
  * \retval true - Zwracane jeśli operacja załączania bibliotek przebiegła prawidłowo
  * \retval false - Zwracane jeśli operacja załączania bibliotek przebiegła NIE prawidłowo
  */
-bool Init_LIBs(Set4LibInterface &LibInterfaces);
+/*bool Init_LIBs(Set4LibInterface &LibInterfaces);*/
 
 int main(int argc, char **argv)
 {
@@ -79,10 +79,14 @@ int main(int argc, char **argv)
     return 2;
   }
 
-  if(!Init_LIBs(Set_LibInterfaces)){
-    cerr << "Opening libs failed" << endl;
-    return 3;
+
+  auto list_lib = Config.GetLibList();
+
+  cout << "Dodawanie bibliotek ...\n";
+  for(int i=0; i < list_lib.size(); i++){
+    Set_LibInterfaces.Add_Interface(list_lib.at(i));
   }
+
   if(!ExecActions(Istrm4Cmds, Set_LibInterfaces)){
     cerr << "Reading cmd file failed" << endl;
     return 4;
@@ -139,7 +143,7 @@ bool ExecPreprocesor(const   char * NazwaPliku, istringstream & IStrm4Cmds )
   return pclose(pProc) == 0;
 }
 
-
+/*
 bool Init_LIBs(Set4LibInterface &LibInterfaces){
   
   if(LibInterfaces.Add_Interface("libs/libInterp4Move.so"))
@@ -150,7 +154,7 @@ bool Init_LIBs(Set4LibInterface &LibInterfaces){
 
 
   return false;
-}
+}*/
 
 
 
