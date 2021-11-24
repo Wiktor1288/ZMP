@@ -34,7 +34,7 @@ class Scene: public AccessControl {
      */
     Map_MobileObj List_of_object;
 
-private:
+public:
 
     /*!
      * \brief konstruktor paramertyczy klasy Scene

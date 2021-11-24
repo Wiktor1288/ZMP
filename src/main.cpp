@@ -8,6 +8,7 @@
 #include "Set4LibInterface.hh"
 #include <list>
 #include "xmlinterp.hh"
+#include "Sender.hh"
 
 #define LINE_SIZE 500
 using namespace std;
@@ -56,20 +57,31 @@ int main(int argc, char **argv)
   Set4LibInterface Set_LibInterfaces;
   istringstream Istrm4Cmds;
   Configuration   Config;
- 
 
-  if (!ReadFile("config/config.xml",Config)) return 1;
+  int Socket4Sending;   
+ 
+ 
 
   if(argc < 2){
     cerr << "Missed arguments" << endl;
     return 1;
   }
 
+  if (!ReadFile("config/config.xml",Config)){
+    cerr << "reading xml failed" << endl;
+    return 5;
+  } 
+
 
   if(!ExecPreprocesor(argv[1],Istrm4Cmds)){
     cerr << "Reading from file failed" << endl;
     return 2;
   }
+
+  if (!OpenConnection(Socket4Sending)){
+    cerr << "Connection problem" << endl;
+    return 6;
+  } 
 
 
   auto list_lib = Config.GetLibList();
@@ -78,11 +90,31 @@ int main(int argc, char **argv)
   for(size_t i=0; i < list_lib.size(); i++){
     Set_LibInterfaces.Add_Interface(list_lib.at(i));
   }
+  auto obj_list=Config.GetObjectList();
+  Scene Scn(obj_list);
+  Sender   ClientSender(Socket4Sending,&Scn);
+  thread   Thread4Sending(Fun_CommunicationThread,&ClientSender);
+ auto objects_list = Scn.GetObjectPointer();
+for (auto object_ptr : objects_list)
+  {
+    auto object = object_ptr.get();
 
+    string message = "AddObj ";
+    message += object->GetStateDesc();
+
+    Send(Socket4Sending,message.c_str());
+  }
+  
   if(!ExecActions(Istrm4Cmds, Set_LibInterfaces)){
     cerr << "Reading cmd file failed" << endl;
     return 4;
   }
+
+usleep(100000);
+  Send(Socket4Sending,"Close\n");
+  ClientSender.CancelCountinueLooping();
+  Thread4Sending.join();
+  close(Socket4Sending);
 
 }
 

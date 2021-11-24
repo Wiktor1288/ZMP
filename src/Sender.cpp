@@ -56,22 +56,7 @@ bool OpenConnection(int &rSocket)
 }
 
 
-bool ChangeState(Scene &Scn) //GeomObject *pObj, AccessControl  *pAccCtrl)
-{
-  bool Changed;
 
-  while (true) {
-    Scn.LockAccess(); // Zamykamy dostęp do sceny, gdy wykonujemy
-                            // modyfikacje na obiekcie.
-    for (GeomObject &rObj : Scn._Container4Objects) {
-       if (!(Changed = rObj.IncStateIndex())) { Scn.UnlockAccess();  return false; }
-    }
-    Scn.MarkChange();
-    Scn.UnlockAccess();
-    usleep(300000);
-  }
-  return true;
-}
 
 
 bool Sender::ShouldCountinueLooping() const{ 
@@ -97,13 +82,15 @@ void Sender::Watching_and_Sending() {
 
         _pScn->LockAccess();
        
-        //------- Przeglądanie tej kolekcji to uproszczony przykład
-       
-    for (const GeomObject &rObj : _pScn->_Container4Objects) {
-                                     // Ta instrukcja to tylko uproszczony przykład
-	    cout << rObj.GetStateDesc();
-        Send(_Socket,rObj.GetStateDesc()); // Tu musi zostać wywołanie odpowiedniej
-                                           // metody/funkcji gerującej polecenia dla serwera.
+       vector<shared_ptr<MobileObj>> MobileObject_list=_pScn->GetObjectPointer();
+    for (auto spObj : MobileObject_list){
+
+        auto *pObj = spObj.get();
+        std::string ObjState = pObj->GetStateDesc();
+
+        cout << "Wysyłam: " << ObjState;
+        Send(_Socket, ObjState.c_str()); // Tu musi zostać wywołanie odpowiedniej
+                                       // metody/funkcji gerującej polecenia dla serwera.
     }
        
        _pScn->CancelChange();

@@ -1,6 +1,6 @@
 #include "Scene.hh"
 
-Scene::Scene(Map_MobileObj &List_of_object): List_of_object{List_of_object}
+Scene::Scene(Map_MobileObj &List_of_object): List_of_object(List_of_object)
 {}
 
 

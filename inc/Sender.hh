@@ -47,7 +47,7 @@ class Sender {
    * \retval true - pętla wątku może być nadal wykonywana.
    * \retval false - w przypadku przeciwnym.
    */
-   bool ShouldCountinueLooping();
+   bool ShouldCountinueLooping() const;
   /*!
    * \brief Powoduje przerwanie działania pętli wątku.
    *
@@ -113,6 +113,6 @@ bool OpenConnection(int &rSocket);
  * \retval true - Jeśli dokonan zosała zmiana stanu wszystkich obiektów.
  * \retval false - w przypadku przeciwnym.
  */
-bool ChangeState(Scene &Scn);
+
 
 
