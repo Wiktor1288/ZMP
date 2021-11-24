@@ -58,6 +58,7 @@ dox
 interp
 obj
 plugin/obj
-
+serwer-z-tlem
+klient
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++
 

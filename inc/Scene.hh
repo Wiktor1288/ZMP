@@ -8,6 +8,9 @@
 #include <map>
 #include "MobileObj.hh"
 #include "Vector3D.hh"
+#include "AccessControl.hh"
+#include <vector>
+
 using namespace std;
 
 /*!
@@ -24,7 +27,7 @@ typedef  map<string, shared_ptr<MobileObj>> Map_MobileObj;
  * jest to definicja klasy, która przechowuje Listę obiektów klasy MobileObj, które powinny zostać wyświetlone
  * w programie wizualizującym
  */
-class Scene{
+class Scene: public AccessControl {
 
     /*!
      * \brief Lista obiektów klasy MobileObj
@@ -64,6 +67,21 @@ private:
      * \param [in] Name_object - nazwa szukanego  obiektu
      */
     void AddObjToList(const std::string Name_object);
+
+
+   
+    /*!
+     * \brief Metoda zwracająca vector nazw obiektów znajdujących się na scenie
+     * 
+     */
+    vector<string> GetObjectNames();
+   
+      
+    /*!
+     * \brief Metoda zwracająca vector wskaźników na obiekty znajdujących się na scenie
+     * 
+     */
+    vector<shared_ptr<MobileObj>> GetObjectPointer();
 
 };
 

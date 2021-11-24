@@ -50,14 +50,6 @@ bool ExecPreprocesor(const   char * NazwaPliku, istringstream & IStrm4Cmds );
  */
 bool ExecActions(istream &Str4Cmds_read, Set4LibInterface &LibInterfaces);
 
-/*!
- * \brief Funkcja pozwalająca załadować biblioteki do obiektu klasy Set4LibInterface 
- *
- * \param[in] LibInterfaces - Nazwa obiektu przechowującego interfejsy wtyczek.
- * \retval true - Zwracane jeśli operacja załączania bibliotek przebiegła prawidłowo
- * \retval false - Zwracane jeśli operacja załączania bibliotek przebiegła NIE prawidłowo
- */
-/*bool Init_LIBs(Set4LibInterface &LibInterfaces);*/
 
 int main(int argc, char **argv)
 {
@@ -83,7 +75,7 @@ int main(int argc, char **argv)
   auto list_lib = Config.GetLibList();
 
   cout << "Dodawanie bibliotek ...\n";
-  for(int i=0; i < list_lib.size(); i++){
+  for(size_t i=0; i < list_lib.size(); i++){
     Set_LibInterfaces.Add_Interface(list_lib.at(i));
   }
 
@@ -143,18 +135,7 @@ bool ExecPreprocesor(const   char * NazwaPliku, istringstream & IStrm4Cmds )
   return pclose(pProc) == 0;
 }
 
-/*
-bool Init_LIBs(Set4LibInterface &LibInterfaces){
-  
-  if(LibInterfaces.Add_Interface("libs/libInterp4Move.so"))
-    if(LibInterfaces.Add_Interface("libs/libInterp4Rotate.so"))
-      if(LibInterfaces.Add_Interface("libs/libInterp4Set.so"))
-        if(LibInterfaces.Add_Interface("libs/libInterp4Pause.so"))
-          return true;
 
-
-  return false;
-}*/
 
 
 
