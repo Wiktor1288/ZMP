@@ -219,16 +219,16 @@
                   char buffor[200];
 
                 int length = sprintf(buffor, " Name=%s RotXYZ_deg=(%f,%f,%f) RGB=(%d,%d,%d) Scale=(%f,%f,%f) Shift=(%f,%f,%f) Trans_m=(%f,%f,%f)\n", 
-                this->_Name.c_str(), 
-                this->_Ang_Yaw_deg, this->_Ang_Pitch_deg, this->_Ang_Roll_deg,
-                this->_colour[0], this->_colour[1], this->_colour[2],
-                this->_scale[0], this->_scale[1], this->_scale[2],
-                this->_shift[0], this->_shift[1], this->_shift[2],
+                _Name.c_str(), 
+                _Ang_Yaw_deg, _Ang_Pitch_deg, _Ang_Roll_deg,
+                _colour[0], _colour[1], _colour[2],
+                _scale[0], _scale[1], _scale[2],
+                _shift[0], _shift[1], _shift[2],
                 _Position_m[0], _Position_m[1], _Position_m[2]  );
 
-                std::string result(buffor, length);
+                std::string _str(buffor, length);
 
-                return result;
+                return _str;
 
         }
 

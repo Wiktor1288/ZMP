@@ -114,6 +114,9 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
       << "     " << sName_Name << " = \"" << sValue_Name << "\"" << endl
       << "     " << sName_Scale << " = \"" << sValue_Scale << "\"" << endl
       << "     " << sName_RGB << " = \"" << sValue_RGB << "\"" << endl   
+      << "     " << sName_Shift << " = \"" << sValue_Shift << "\"" << endl  
+      << "     " << sName_Rot << " = \"" << sValue_Rot << "\"" << endl  
+      << "     " << sName_Trans << " = \"" << sValue_Trans << "\"" << endl  
       << endl; 
  //-----------------------------------------------------------------------------
  // Przykład czytania wartości parametrów
@@ -165,9 +168,18 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
   xercesc::XMLString::release(&sName_Name);
   xercesc::XMLString::release(&sName_Scale);
   xercesc::XMLString::release(&sName_RGB);
+  xercesc::XMLString::release(&sName_Shift);
+  xercesc::XMLString::release(&sName_Rot);
+  xercesc::XMLString::release(&sName_Trans);
   xercesc::XMLString::release(&sValue_Name);
   xercesc::XMLString::release(&sValue_Scale);
   xercesc::XMLString::release(&sValue_RGB);
+  xercesc::XMLString::release(&sValue_Shift);
+  xercesc::XMLString::release(&sValue_Rot);
+  xercesc::XMLString::release(&sValue_Trans);
+
+
+
 }
 
 

@@ -8,5 +8,17 @@ Otherwise you run the risk that the wrong font is being used for dot generated g
 warning: The selected output language "polish" has not been updated
 since release 1.8.2.  As a result some sentences may appear in English.
 
-/home/wiktor/Pulpit/ZMP/etap1-zalazek/src/main.cpp:69: warning: The following parameter of ExecActions(istream &Str4Cmds_read, Set4LibInterface &LibInterfaces) is not documented:
+/home/wiktor/Pulpit/ZMP/etap1-zalazek/src/main.cpp:122: warning: The following parameter of ExecActions(istream &Str4Cmds_read, Set4LibInterface &LibInterfaces) is not documented:
   parameter 'LibInterfaces'
+/home/wiktor/Pulpit/ZMP/etap1-zalazek/src/main.cpp:21: warning: argument 'CmdList' of command @param is not found in the argument list of ReadFile(const char *sFileName, Configuration &rConfig)
+/home/wiktor/Pulpit/ZMP/etap1-zalazek/src/main.cpp:29: warning: The following parameter of ReadFile(const char *sFileName, Configuration &rConfig) is not documented:
+  parameter 'rConfig'
+/home/wiktor/Pulpit/ZMP/etap1-zalazek/inc/Sender.hh:85: warning: argument 'rSender' of command @param is not found in the argument list of Fun_CommunicationThread(Sender *pSender)
+/home/wiktor/Pulpit/ZMP/etap1-zalazek/src/Sender.cpp:27: warning: The following parameter of Fun_CommunicationThread(Sender *pSender) is not documented:
+  parameter 'pSender'
+/home/wiktor/Pulpit/ZMP/etap1-zalazek/inc/Sender.hh:85: warning: argument 'rSender' of command @param is not found in the argument list of Fun_CommunicationThread(Sender *pSender)
+/home/wiktor/Pulpit/ZMP/etap1-zalazek/inc/Sender.hh:93: warning: The following parameter of Fun_CommunicationThread(Sender *pSender) is not documented:
+  parameter 'pSender'
+/home/wiktor/Pulpit/ZMP/etap1-zalazek/src/main.cpp:21: warning: argument 'CmdList' of command @param is not found in the argument list of ReadFile(const char *sFileName, Configuration &rConfig)
+/home/wiktor/Pulpit/ZMP/etap1-zalazek/src/xmlinterp.cpp:352: warning: The following parameter of ReadFile(const char *sFileName, Configuration &rConfig) is not documented:
+  parameter 'rConfig'

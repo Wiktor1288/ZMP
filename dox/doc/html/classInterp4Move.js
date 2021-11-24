@@ -1,6 +1,7 @@
 var classInterp4Move =
 [
     [ "Interp4Move", "classInterp4Move.html#a66191f9fe67d4b0fd4d35da3b9927518", null ],
+    [ "~Interp4Move", "classInterp4Move.html#aa7f9cefa32196ba40c224893cf33c534", null ],
     [ "CreateCmd", "classInterp4Move.html#a6a224a2af44460ab5fd13167fbadf96b", null ],
     [ "ExecCmd", "classInterp4Move.html#aece8d04ad991f815ed9de901dce00261", null ],
     [ "GetCmdName", "classInterp4Move.html#aae1e3bf7fc34076f19d857a8cd30082e", null ],

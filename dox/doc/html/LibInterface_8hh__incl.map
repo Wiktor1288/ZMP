@@ -1,14 +1,14 @@
 <map id="LibInterface.hh" name="LibInterface.hh">
-<area shape="rect" id="node1" title="Deklaracja klasy LibInterface." alt="" coords="113,5,221,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="215,379,287,405"/>
-<area shape="rect" id="node3" title=" " alt="" coords="43,80,112,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="136,80,198,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="222,80,282,107"/>
-<area shape="rect" id="node6" href="$Interp4Command_8hh.html" title="Definicja klasy Interp4Command." alt="" coords="307,80,446,107"/>
-<area shape="rect" id="node7" href="$MobileObj_8hh.html" title="Zawiera definicję klasy MobileObj." alt="" coords="328,155,425,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="289,229,344,256"/>
-<area shape="rect" id="node9" href="$Vector3D_8hh.html" title="Deklaracja instacji szablonu geom::Vector." alt="" coords="368,229,462,256"/>
-<area shape="rect" id="node10" href="$geomVector_8hh.html" title="Definicja szablonu wektora N&#45;wymiarowego." alt="" coords="324,304,434,331"/>
-<area shape="rect" id="node11" title=" " alt="" coords="330,379,388,405"/>
-<area shape="rect" id="node12" title=" " alt="" coords="413,379,478,405"/>
+<area shape="rect" id="node1" title="Deklaracja klasy LibInterface." alt="" coords="183,5,291,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="47,379,119,405"/>
+<area shape="rect" id="node3" title=" " alt="" coords="342,229,411,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="206,80,267,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="292,80,352,107"/>
+<area shape="rect" id="node6" href="$Interp4Command_8hh.html" title="Definicja klasy Interp4Command." alt="" coords="43,80,182,107"/>
+<area shape="rect" id="node7" href="$MobileObj_8hh.html" title="Zawiera definicję klasy MobileObj." alt="" coords="177,155,275,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="248,229,303,256"/>
+<area shape="rect" id="node9" href="$Vector3D_8hh.html" title="Deklaracja instacji szablonu geom::Vector." alt="" coords="130,229,223,256"/>
+<area shape="rect" id="node10" href="$geomVector_8hh.html" title="Definicja szablonu wektora N&#45;wymiarowego." alt="" coords="122,304,231,331"/>
+<area shape="rect" id="node11" title=" " alt="" coords="234,379,293,405"/>
+<area shape="rect" id="node12" title=" " alt="" coords="144,379,209,405"/>
 </map>

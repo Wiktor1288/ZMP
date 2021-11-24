@@ -62,7 +62,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Interp4Command_8hh.html"
+"AccessControl_8hh.html",
+"namespacemembers.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

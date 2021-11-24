@@ -96,6 +96,8 @@ Diagram współpracy dla Interp4Move:</div>
 Metody publiczne</h2></td></tr>
 <tr class="memitem:a66191f9fe67d4b0fd4d35da3b9927518"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInterp4Move.html#a66191f9fe67d4b0fd4d35da3b9927518">Interp4Move</a> ()</td></tr>
 <tr class="separator:a66191f9fe67d4b0fd4d35da3b9927518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f9cefa32196ba40c224893cf33c534"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInterp4Move.html#aa7f9cefa32196ba40c224893cf33c534">~Interp4Move</a> ()</td></tr>
+<tr class="separator:aa7f9cefa32196ba40c224893cf33c534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83a48fe1db612f65539ed888c434c2b5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInterp4Move.html#a83a48fe1db612f65539ed888c434c2b5">PrintCmd</a> () const</td></tr>
 <tr class="memdesc:a83a48fe1db612f65539ed888c434c2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)  <a href="classInterp4Move.html#a83a48fe1db612f65539ed888c434c2b5">Więcej...</a><br /></td></tr>
 <tr class="separator:a83a48fe1db612f65539ed888c434c2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,11 +159,11 @@ Atrybuty prywatne</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00031">31</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        : <a class="code" href="classInterp4Move.html#a60185a778a2ec83f3b10eddc85fe609d">_Speed_mmS</a>(0), <a class="code" href="classInterp4Move.html#ae30c7a3460fd40db0bebf08ef62aa935">_Distance_m</a>(0)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{}</div>
+<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00033">33</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        : <a class="code" href="classInterp4Move.html#a60185a778a2ec83f3b10eddc85fe609d">_Speed_mmS</a>(0), <a class="code" href="classInterp4Move.html#ae30c7a3460fd40db0bebf08ef62aa935">_Distance_m</a>(0)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{cout &lt;&lt;<span class="stringliteral">&quot;\n Tworze Move\n&quot;</span>;}</div>
 </div><!-- fragment -->
-<p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00081">CreateCmd()</a>.</p>
+<p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00083">CreateCmd()</a>.</p>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
@@ -173,6 +175,28 @@ Oto graf wywoływań tej funkcji:</div>
 </map>
 </div>
 
+</div>
+</div>
+<a id="aa7f9cefa32196ba40c224893cf33c534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f9cefa32196ba40c224893cf33c534">&#9670;&nbsp;</a></span>~Interp4Move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Interp4Move::~Interp4Move </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00027">27</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                          {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   cout &lt;&lt;<span class="stringliteral">&quot;\n Usuwam Move\n&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji składowych</h2>
@@ -199,12 +223,12 @@ Oto graf wywoływań tej funkcji:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00081">81</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classInterp4Move.html#a66191f9fe67d4b0fd4d35da3b9927518">Interp4Move</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00083">83</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classInterp4Move.html#a66191f9fe67d4b0fd4d35da3b9927518">Interp4Move</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Odwołuje się do <a class="el" href="Interp4Move_8cpp_source.html#l00031">Interp4Move()</a>.</p>
+<p class="reference">Odwołuje się do <a class="el" href="Interp4Move_8cpp_source.html#l00033">Interp4Move()</a>.</p>
 
 <p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00022">CreateCmd()</a>.</p>
 <div class="dynheader">
@@ -264,13 +288,13 @@ Oto graf wywoływań tej funkcji:</div>
 
 <p>Implementuje <a class="el" href="classInterp4Command.html#afc324796c4a8bda5432526fc49e339b3">Interp4Command</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00059">59</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">/*</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   *  Tu trzeba napisać odpowiedni kod.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00061">61</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">/*</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">   *  Tu trzeba napisać odpowiedni kod.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -299,14 +323,14 @@ Oto graf wywoływań tej funkcji:</div>
 
 <p>Implementuje <a class="el" href="classInterp4Command.html#a9b1bff7ff363991b35965ae9dfeac648">Interp4Command</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00050">50</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="Interp4Move_8cpp.html#a161c2be237a6e239fb12733df42be258">return ::GetCmdName</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00052">52</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="Interp4Move_8cpp.html#a161c2be237a6e239fb12733df42be258">return ::GetCmdName</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Odwołuje się do <a class="el" href="Interp4Move_8cpp_source.html#l00011">GetCmdName()</a>.</p>
 
-<p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00038">PrintCmd()</a>.</p>
+<p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00040">PrintCmd()</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
@@ -353,15 +377,15 @@ Oto graf wywoływań tej funkcji:</div>
 
 <p>Implementuje <a class="el" href="classInterp4Command.html#a08fbbf2a70cdac46930b0eba6f5f361c">Interp4Command</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00038">38</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">/*</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  cout &lt;&lt; <a class="code" href="classInterp4Move.html#aae1e3bf7fc34076f19d857a8cd30082e">GetCmdName</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classInterp4Move.html#aa94e7bbb1f29a8f5ecc2711ed107c4cf">_ObjectName</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classInterp4Move.html#a60185a778a2ec83f3b10eddc85fe609d">_Speed_mmS</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span>  &lt;&lt; <a class="code" href="classInterp4Move.html#ae30c7a3460fd40db0bebf08ef62aa935">_Distance_m</a> &lt;&lt; endl;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00040">40</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">/*</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  cout &lt;&lt; <a class="code" href="classInterp4Move.html#aae1e3bf7fc34076f19d857a8cd30082e">GetCmdName</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classInterp4Move.html#aa94e7bbb1f29a8f5ecc2711ed107c4cf">_ObjectName</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classInterp4Move.html#a60185a778a2ec83f3b10eddc85fe609d">_Speed_mmS</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span>  &lt;&lt; <a class="code" href="classInterp4Move.html#ae30c7a3460fd40db0bebf08ef62aa935">_Distance_m</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Odwołuje się do <a class="el" href="Interp4Move_8hh_source.html#l00044">_Distance_m</a>, <a class="el" href="Interp4Move_8hh_source.html#l00029">_ObjectName</a>, <a class="el" href="Interp4Move_8hh_source.html#l00037">_Speed_mmS</a> i <a class="el" href="Interp4Move_8cpp_source.html#l00050">GetCmdName()</a>.</p>
+<p class="reference">Odwołuje się do <a class="el" href="Interp4Move_8hh_source.html#l00044">_Distance_m</a>, <a class="el" href="Interp4Move_8hh_source.html#l00029">_ObjectName</a>, <a class="el" href="Interp4Move_8hh_source.html#l00037">_Speed_mmS</a> i <a class="el" href="Interp4Move_8cpp_source.html#l00052">GetCmdName()</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
@@ -398,8 +422,8 @@ Oto graf wywołań dla tej funkcji:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8hh_source.html#l00074">74</a> pliku <a class="el" href="Interp4Move_8hh_source.html">Interp4Move.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{}</div>
+<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8hh_source.html#l00075">75</a> pliku <a class="el" href="Interp4Move_8hh_source.html">Interp4Move.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -428,10 +452,10 @@ Oto graf wywołań dla tej funkcji:</div>
 
 <p>Implementuje <a class="el" href="classInterp4Command.html#a693ca79d24ba27d11a19ed6fc90c37b9">Interp4Command</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00090">90</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;   Move  NazwaObiektu  Szybkosc[m/s]  DlugoscDrogi[m]&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00092">92</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;   Move  NazwaObiektu  Szybkosc[m/s]  DlugoscDrogi[m]&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -461,11 +485,11 @@ Oto graf wywołań dla tej funkcji:</div>
 
 <p>Implementuje <a class="el" href="classInterp4Command.html#a3e15ef01af10fa8961926fd9b0274ab8">Interp4Command</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00071">71</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  Strm_CmdsList &gt;&gt; <a class="code" href="classInterp4Move.html#aa94e7bbb1f29a8f5ecc2711ed107c4cf">_ObjectName</a> &gt;&gt; <a class="code" href="classInterp4Move.html#a60185a778a2ec83f3b10eddc85fe609d">_Speed_mmS</a> &gt;&gt; <a class="code" href="classInterp4Move.html#ae30c7a3460fd40db0bebf08ef62aa935">_Distance_m</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">return</span> !Strm_CmdsList.fail();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<p class="definition">Definicja w linii <a class="el" href="Interp4Move_8cpp_source.html#l00073">73</a> pliku <a class="el" href="Interp4Move_8cpp_source.html">Interp4Move.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  Strm_CmdsList &gt;&gt; <a class="code" href="classInterp4Move.html#aa94e7bbb1f29a8f5ecc2711ed107c4cf">_ObjectName</a> &gt;&gt; <a class="code" href="classInterp4Move.html#a60185a778a2ec83f3b10eddc85fe609d">_Speed_mmS</a> &gt;&gt; <a class="code" href="classInterp4Move.html#ae30c7a3460fd40db0bebf08ef62aa935">_Distance_m</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> !Strm_CmdsList.fail();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Odwołuje się do <a class="el" href="Interp4Move_8hh_source.html#l00044">_Distance_m</a>, <a class="el" href="Interp4Move_8hh_source.html#l00029">_ObjectName</a> i <a class="el" href="Interp4Move_8hh_source.html#l00037">_Speed_mmS</a>.</p>
 
@@ -495,7 +519,7 @@ Oto graf wywołań dla tej funkcji:</div>
 
 <p class="definition">Definicja w linii <a class="el" href="Interp4Move_8hh_source.html#l00044">44</a> pliku <a class="el" href="Interp4Move_8hh_source.html">Interp4Move.hh</a>.</p>
 
-<p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00038">PrintCmd()</a> i <a class="el" href="Interp4Move_8cpp_source.html#l00071">ReadParams()</a>.</p>
+<p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00040">PrintCmd()</a> i <a class="el" href="Interp4Move_8cpp_source.html#l00073">ReadParams()</a>.</p>
 
 </div>
 </div>
@@ -522,7 +546,7 @@ Oto graf wywołań dla tej funkcji:</div>
 
 <p class="definition">Definicja w linii <a class="el" href="Interp4Move_8hh_source.html#l00029">29</a> pliku <a class="el" href="Interp4Move_8hh_source.html">Interp4Move.hh</a>.</p>
 
-<p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00038">PrintCmd()</a> i <a class="el" href="Interp4Move_8cpp_source.html#l00071">ReadParams()</a>.</p>
+<p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00040">PrintCmd()</a> i <a class="el" href="Interp4Move_8cpp_source.html#l00073">ReadParams()</a>.</p>
 
 </div>
 </div>
@@ -549,7 +573,7 @@ Oto graf wywołań dla tej funkcji:</div>
 
 <p class="definition">Definicja w linii <a class="el" href="Interp4Move_8hh_source.html#l00037">37</a> pliku <a class="el" href="Interp4Move_8hh_source.html">Interp4Move.hh</a>.</p>
 
-<p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00038">PrintCmd()</a> i <a class="el" href="Interp4Move_8cpp_source.html#l00071">ReadParams()</a>.</p>
+<p class="reference">Odwołania w <a class="el" href="Interp4Move_8cpp_source.html#l00040">PrintCmd()</a> i <a class="el" href="Interp4Move_8cpp_source.html#l00073">ReadParams()</a>.</p>
 
 </div>
 </div>
@@ -559,17 +583,17 @@ Oto graf wywołań dla tej funkcji:</div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassInterp4Move_html_a66191f9fe67d4b0fd4d35da3b9927518"><div class="ttname"><a href="classInterp4Move.html#a66191f9fe67d4b0fd4d35da3b9927518">Interp4Move::Interp4Move</a></div><div class="ttdeci">Interp4Move()</div><div class="ttdef"><b>Definition:</b> <a href="Interp4Move_8cpp_source.html#l00031">Interp4Move.cpp:31</a></div></div>
+<div class="ttc" id="aclassInterp4Move_html_a66191f9fe67d4b0fd4d35da3b9927518"><div class="ttname"><a href="classInterp4Move.html#a66191f9fe67d4b0fd4d35da3b9927518">Interp4Move::Interp4Move</a></div><div class="ttdeci">Interp4Move()</div><div class="ttdef"><b>Definition:</b> <a href="Interp4Move_8cpp_source.html#l00033">Interp4Move.cpp:33</a></div></div>
 <div class="ttc" id="aclassInterp4Move_html_a60185a778a2ec83f3b10eddc85fe609d"><div class="ttname"><a href="classInterp4Move.html#a60185a778a2ec83f3b10eddc85fe609d">Interp4Move::_Speed_mmS</a></div><div class="ttdeci">double _Speed_mmS</div><div class="ttdoc">Szybkość ruchu podawana w m/s.</div><div class="ttdef"><b>Definition:</b> <a href="Interp4Move_8hh_source.html#l00037">Interp4Move.hh:37</a></div></div>
 <div class="ttc" id="aInterp4Move_8cpp_html_a161c2be237a6e239fb12733df42be258"><div class="ttname"><a href="Interp4Move_8cpp.html#a161c2be237a6e239fb12733df42be258">GetCmdName</a></div><div class="ttdeci">const char * GetCmdName()</div><div class="ttdef"><b>Definition:</b> <a href="Interp4Move_8cpp_source.html#l00011">Interp4Move.cpp:11</a></div></div>
-<div class="ttc" id="aclassInterp4Move_html_aae1e3bf7fc34076f19d857a8cd30082e"><div class="ttname"><a href="classInterp4Move.html#aae1e3bf7fc34076f19d857a8cd30082e">Interp4Move::GetCmdName</a></div><div class="ttdeci">virtual const char * GetCmdName() const</div><div class="ttdoc">Wyświetla nazwę polecenia.</div><div class="ttdef"><b>Definition:</b> <a href="Interp4Move_8cpp_source.html#l00050">Interp4Move.cpp:50</a></div></div>
+<div class="ttc" id="aclassInterp4Move_html_aae1e3bf7fc34076f19d857a8cd30082e"><div class="ttname"><a href="classInterp4Move.html#aae1e3bf7fc34076f19d857a8cd30082e">Interp4Move::GetCmdName</a></div><div class="ttdeci">virtual const char * GetCmdName() const</div><div class="ttdoc">Wyświetla nazwę polecenia.</div><div class="ttdef"><b>Definition:</b> <a href="Interp4Move_8cpp_source.html#l00052">Interp4Move.cpp:52</a></div></div>
 <div class="ttc" id="aclassInterp4Move_html_ae30c7a3460fd40db0bebf08ef62aa935"><div class="ttname"><a href="classInterp4Move.html#ae30c7a3460fd40db0bebf08ef62aa935">Interp4Move::_Distance_m</a></div><div class="ttdeci">double _Distance_m</div><div class="ttdoc">Przebyty dystans w m.</div><div class="ttdef"><b>Definition:</b> <a href="Interp4Move_8hh_source.html#l00044">Interp4Move.hh:44</a></div></div>
 <div class="ttc" id="aclassInterp4Move_html_aa94e7bbb1f29a8f5ecc2711ed107c4cf"><div class="ttname"><a href="classInterp4Move.html#aa94e7bbb1f29a8f5ecc2711ed107c4cf">Interp4Move::_ObjectName</a></div><div class="ttdeci">std::string _ObjectName</div><div class="ttdoc">Nazwa obiektu.</div><div class="ttdef"><b>Definition:</b> <a href="Interp4Move_8hh_source.html#l00029">Interp4Move.hh:29</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classInterp4Move.html">Interp4Move</a></li>
-    <li class="footer">Wygenerowano Śr, 10 lis 2021 11:42:43 dla Interpreter programem
+    <li class="footer">Wygenerowano Śr, 24 lis 2021 05:58:49 dla Interpreter programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

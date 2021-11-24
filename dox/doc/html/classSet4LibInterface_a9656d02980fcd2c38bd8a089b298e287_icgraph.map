@@ -1,5 +1,4 @@
 <map id="Set4LibInterface::Add_Interface" name="Set4LibInterface::Add_Interface">
-<area shape="rect" id="node1" title="Metoda pozwalająca na dodanie nowego interfejsu." alt="" coords="227,5,373,47"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a8be5ff56e9f5cc5b90a12f8ba1153811" title="Funkcja pozwalająca załadować biblioteki do obiektu klasy Set4LibInterface." alt="" coords="104,13,179,39"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,39"/>
+<area shape="rect" id="node1" title="Metoda pozwalająca na dodanie nowego interfejsu." alt="" coords="104,5,251,47"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,39"/>
 </map>

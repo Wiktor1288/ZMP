@@ -1,10 +1,24 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,125,56,151"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#ad59fb870291089ae4b3a4894d86bd973" title="Wykonuje preprocesor na podanym pliku." alt="" coords="117,73,211,99"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a8f82d78ce6f79fa0fb91cc1de0f83766" title="Wykonuje preprocesor na podanym pliku." alt="" coords="104,125,224,151"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a8be5ff56e9f5cc5b90a12f8ba1153811" title="Funkcja pozwalająca załadować biblioteki do obiektu klasy Set4LibInterface." alt="" coords="127,177,201,203"/>
-<area shape="rect" id="node3" href="$classSet4LibInterface.html#a5b237d011a024946f3c3146aa30bd678" title="Metoda pozwalająca na wyszukanie konkretego interfejsu." alt="" coords="299,5,448,47"/>
-<area shape="rect" id="node4" href="$classInterp4Command.html#a08fbbf2a70cdac46930b0eba6f5f361c" title="Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)." alt="" coords="283,71,464,98"/>
-<area shape="rect" id="node5" href="$classInterp4Command.html#a3e15ef01af10fa8961926fd9b0274ab8" title="Czyta wartości parametrów danego polecenia." alt="" coords="272,122,475,149"/>
-<area shape="rect" id="node8" href="$classSet4LibInterface.html#a9656d02980fcd2c38bd8a089b298e287" title="Metoda pozwalająca na dodanie nowego interfejsu." alt="" coords="300,173,447,215"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,274,56,301"/>
+<area shape="rect" id="node2" href="$classSet4LibInterface.html#a9656d02980fcd2c38bd8a089b298e287" title="Metoda pozwalająca na dodanie nowego interfejsu." alt="" coords="137,5,284,47"/>
+<area shape="rect" id="node3" href="$classSender.html#a96412f54520d550dd1ea3e9b3bb29786" title="Powoduje przerwanie działania pętli wątku." alt="" coords="104,71,317,98"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ad59fb870291089ae4b3a4894d86bd973" title="Wykonuje preprocesor na podanym pliku." alt="" coords="163,122,258,149"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#a8f82d78ce6f79fa0fb91cc1de0f83766" title="Wykonuje preprocesor na podanym pliku." alt="" coords="151,173,271,199"/>
+<area shape="rect" id="node9" href="$Sender_8hh.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego." alt="" coords="120,274,301,301"/>
+<area shape="rect" id="node12" href="$classScene.html#ac9f8c0d8ce40f22716bdd3250392c8de" title="Metoda zwracająca vector wskaźników na obiekty znajdujących się na scenie." alt="" coords="640,189,805,215"/>
+<area shape="rect" id="node18" href="$classConfiguration.html#a4872f4d0e5720a476f5d639aebbbe38f" title="Metoda pozwalająca zwrócić listę bibliotek Configuration::lib_int_list." alt="" coords="129,325,293,351"/>
+<area shape="rect" id="node19" href="$classConfiguration.html#a13df984642c60b20d6331f840aaaadf8" title="Metoda pozwalająca zwrócić listę obiektów Configuration::object_list." alt="" coords="119,375,303,402"/>
+<area shape="rect" id="node20" href="$Sender_8hh.html#a49ba9261b2ded960bce23328c431e31d" title=" " alt="" coords="151,426,270,453"/>
+<area shape="rect" id="node21" href="$main_8cpp.html#ae98290dceda14c563cc55e5d85b91a2f" title=" " alt="" coords="174,477,247,503"/>
+<area shape="rect" id="node22" href="$Sender_8hh.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe." alt="" coords="185,527,237,554"/>
+<area shape="rect" id="node5" href="$classSet4LibInterface.html#a5b237d011a024946f3c3146aa30bd678" title="Metoda pozwalająca na wyszukanie konkretego interfejsu." alt="" coords="392,56,541,97"/>
+<area shape="rect" id="node6" href="$classInterp4Command.html#a08fbbf2a70cdac46930b0eba6f5f361c" title="Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)." alt="" coords="376,122,557,149"/>
+<area shape="rect" id="node7" href="$classInterp4Command.html#a3e15ef01af10fa8961926fd9b0274ab8" title="Czyta wartości parametrów danego polecenia." alt="" coords="365,173,568,199"/>
+<area shape="rect" id="node10" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego." alt="" coords="391,308,542,349"/>
+<area shape="rect" id="node11" href="$classAccessControl.html#ac05a143ff477cee359603872b7642943" title="Skasowanie informacji, że zmiana nastąpiła." alt="" coords="624,239,821,266"/>
+<area shape="rect" id="node13" href="$classAccessControl.html#a687d41c24cb496f070915eb7c813f08f" title="Dostęp do informacji o zmianie." alt="" coords="635,290,810,317"/>
+<area shape="rect" id="node14" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny." alt="" coords="629,341,816,367"/>
+<area shape="rect" id="node15" href="$Sender_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe." alt="" coords="697,391,749,418"/>
+<area shape="rect" id="node16" href="$classSender.html#a3dd228566d864f234a2a56650c8d7c4e" title="Sprawdza, czy pętla wątku może być wykonywana." alt="" coords="616,442,829,469"/>
+<area shape="rect" id="node17" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny." alt="" coords="623,493,822,519"/>
 </map>

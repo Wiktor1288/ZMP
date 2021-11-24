@@ -71,36 +71,38 @@ $(document).ready(function(){initNavTree('Set4LibInterface_8cpp_source.html','')
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classSet4LibInterface.html#a5b237d011a024946f3c3146aa30bd678">    7</a></span>&#160;shared_ptr&lt;LibInterface&gt; <a class="code" href="classSet4LibInterface.html#a5b237d011a024946f3c3146aa30bd678">Set4LibInterface::Find_TheInterface</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; Name){</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; Plugin_Name = <span class="stringliteral">&quot;libs/libInterp4&quot;</span> + Name + <span class="stringliteral">&quot;.so&quot;</span>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">auto</span> it = Set4LibInterfaces.find(Plugin_Name);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span> (it == Set4LibInterfaces.end()){</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> it-&gt;second;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classSet4LibInterface.html#a9656d02980fcd2c38bd8a089b298e287">   17</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classSet4LibInterface.html#a9656d02980fcd2c38bd8a089b298e287">Set4LibInterface::Add_Interface</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; Name_Interface){</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    shared_ptr&lt;LibInterface&gt; libInterface = make_shared&lt;LibInterface&gt;();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span>(!libInterface-&gt;Init_LibInter(Name_Interface)){</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Couldnt load &quot;</span> &lt;&lt; Name_Interface &lt;&lt; endl;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    Set4LibInterfaces.insert({Name_Interface, libInterface});</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">auto</span> it = Set4LibInterfaces.find(Plugin_Name);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (it == Set4LibInterfaces.end()){</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classSet4LibInterface.html#a9656d02980fcd2c38bd8a089b298e287">   19</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classSet4LibInterface.html#a9656d02980fcd2c38bd8a089b298e287">Set4LibInterface::Add_Interface</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; Name_Interface){</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    shared_ptr&lt;LibInterface&gt; libInterface = make_shared&lt;LibInterface&gt;();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span>(!libInterface-&gt;Init_LibInter(Name_Interface)){</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Couldnt load &quot;</span> &lt;&lt; Name_Interface &lt;&lt; endl;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Set4LibInterfaces.insert({Name_Interface, libInterface});</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassSet4LibInterface_html_a5b237d011a024946f3c3146aa30bd678"><div class="ttname"><a href="classSet4LibInterface.html#a5b237d011a024946f3c3146aa30bd678">Set4LibInterface::Find_TheInterface</a></div><div class="ttdeci">shared_ptr&lt; LibInterface &gt; Find_TheInterface(const string &amp;Name)</div><div class="ttdoc">Metoda pozwalająca na wyszukanie konkretego interfejsu.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterface_8cpp_source.html#l00007">Set4LibInterface.cpp:7</a></div></div>
-<div class="ttc" id="aclassSet4LibInterface_html_a9656d02980fcd2c38bd8a089b298e287"><div class="ttname"><a href="classSet4LibInterface.html#a9656d02980fcd2c38bd8a089b298e287">Set4LibInterface::Add_Interface</a></div><div class="ttdeci">bool Add_Interface(const string &amp;Name_Interface)</div><div class="ttdoc">Metoda pozwalająca na dodanie nowego interfejsu.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterface_8cpp_source.html#l00017">Set4LibInterface.cpp:17</a></div></div>
+<div class="ttc" id="aclassSet4LibInterface_html_a9656d02980fcd2c38bd8a089b298e287"><div class="ttname"><a href="classSet4LibInterface.html#a9656d02980fcd2c38bd8a089b298e287">Set4LibInterface::Add_Interface</a></div><div class="ttdeci">bool Add_Interface(const string &amp;Name_Interface)</div><div class="ttdoc">Metoda pozwalająca na dodanie nowego interfejsu.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterface_8cpp_source.html#l00019">Set4LibInterface.cpp:19</a></div></div>
 <div class="ttc" id="aSet4LibInterface_8hh_html"><div class="ttname"><a href="Set4LibInterface_8hh.html">Set4LibInterface.hh</a></div><div class="ttdoc">Zawiera definicję klasy Set4LibInterface.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="Set4LibInterface_8cpp.html">Set4LibInterface.cpp</a></li>
-    <li class="footer">Wygenerowano Śr, 10 lis 2021 11:42:43 dla Interpreter programem
+    <li class="footer">Wygenerowano Śr, 24 lis 2021 05:58:49 dla Interpreter programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

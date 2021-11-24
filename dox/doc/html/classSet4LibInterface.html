@@ -118,26 +118,25 @@ Atrybuty prywatne</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definicja w linii <a class="el" href="Set4LibInterface_8cpp_source.html#l00017">17</a> pliku <a class="el" href="Set4LibInterface_8cpp_source.html">Set4LibInterface.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                                {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    shared_ptr&lt;LibInterface&gt; libInterface = make_shared&lt;LibInterface&gt;();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span>(!libInterface-&gt;Init_LibInter(Name_Interface)){</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Couldnt load &quot;</span> &lt;&lt; Name_Interface &lt;&lt; endl;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classSet4LibInterface.html#aae1a26ba89195c9424af3d017838e8a9">Set4LibInterfaces</a>.insert({Name_Interface, libInterface});</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<p class="definition">Definicja w linii <a class="el" href="Set4LibInterface_8cpp_source.html#l00019">19</a> pliku <a class="el" href="Set4LibInterface_8cpp_source.html">Set4LibInterface.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    shared_ptr&lt;LibInterface&gt; libInterface = make_shared&lt;LibInterface&gt;();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span>(!libInterface-&gt;Init_LibInter(Name_Interface)){</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Couldnt load &quot;</span> &lt;&lt; Name_Interface &lt;&lt; endl;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classSet4LibInterface.html#aae1a26ba89195c9424af3d017838e8a9">Set4LibInterfaces</a>.insert({Name_Interface, libInterface});</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Odwołania w <a class="el" href="main_8cpp_source.html#l00117">Init_LIBs()</a>.</p>
+<p class="reference">Odwołania w <a class="el" href="main_8cpp_source.html#l00055">main()</a>.</p>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSet4LibInterface_a9656d02980fcd2c38bd8a089b298e287_icgraph.png" border="0" usemap="#classSet4LibInterface_a9656d02980fcd2c38bd8a089b298e287_icgraph" alt=""/></div>
 <map name="classSet4LibInterface_a9656d02980fcd2c38bd8a089b298e287_icgraph" id="classSet4LibInterface_a9656d02980fcd2c38bd8a089b298e287_icgraph">
-<area shape="rect" title="Metoda pozwalająca na dodanie nowego interfejsu." alt="" coords="227,5,373,47"/>
-<area shape="rect" href="main_8cpp.html#a8be5ff56e9f5cc5b90a12f8ba1153811" title="Funkcja pozwalająca załadować biblioteki do obiektu klasy Set4LibInterface." alt="" coords="104,13,179,39"/>
+<area shape="rect" title="Metoda pozwalająca na dodanie nowego interfejsu." alt="" coords="104,5,251,47"/>
 <area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,39"/>
 </map>
 </div>
@@ -176,15 +175,17 @@ Oto graf wywoływań tej funkcji:</div>
 <p class="definition">Definicja w linii <a class="el" href="Set4LibInterface_8cpp_source.html#l00007">7</a> pliku <a class="el" href="Set4LibInterface_8cpp_source.html">Set4LibInterface.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                                              {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; Plugin_Name = <span class="stringliteral">&quot;libs/libInterp4&quot;</span> + Name + <span class="stringliteral">&quot;.so&quot;</span>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="classSet4LibInterface.html#aae1a26ba89195c9424af3d017838e8a9">Set4LibInterfaces</a>.find(Plugin_Name);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span> (it == <a class="code" href="classSet4LibInterface.html#aae1a26ba89195c9424af3d017838e8a9">Set4LibInterfaces</a>.end()){</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> it-&gt;second;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="classSet4LibInterface.html#aae1a26ba89195c9424af3d017838e8a9">Set4LibInterfaces</a>.find(Plugin_Name);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (it == <a class="code" href="classSet4LibInterface.html#aae1a26ba89195c9424af3d017838e8a9">Set4LibInterfaces</a>.end()){</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Odwołania w <a class="el" href="main_8cpp_source.html#l00069">ExecActions()</a>.</p>
+<p class="reference">Odwołania w <a class="el" href="main_8cpp_source.html#l00122">ExecActions()</a>.</p>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
@@ -235,7 +236,7 @@ Oto graf wywoływań tej funkcji:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classSet4LibInterface.html">Set4LibInterface</a></li>
-    <li class="footer">Wygenerowano Śr, 10 lis 2021 11:42:43 dla Interpreter programem
+    <li class="footer">Wygenerowano Śr, 24 lis 2021 05:58:49 dla Interpreter programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -86,7 +86,9 @@ void Sender::Watching_and_Sending() {
     for (auto spObj : MobileObject_list){
 
         auto *pObj = spObj.get();
-        std::string ObjState = pObj->GetStateDesc();
+        std::string ObjState = "UpdateObj ";
+        ObjState += pObj->GetStateDesc();
+
 
         cout << "Wysyłam: " << ObjState;
         Send(_Socket, ObjState.c_str()); // Tu musi zostać wywołanie odpowiedniej

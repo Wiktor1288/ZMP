@@ -1,5 +1,12 @@
 var files_dup =
 [
+    [ "AccessControl.hh", "AccessControl_8hh.html", [
+      [ "AccessControl", "classAccessControl.html", "classAccessControl" ]
+    ] ],
+    [ "Configuration.cpp", "Configuration_8cpp.html", null ],
+    [ "Configuration.hh", "Configuration_8hh.html", [
+      [ "Configuration", "classConfiguration.html", "classConfiguration" ]
+    ] ],
     [ "geomVector.hh", "geomVector_8hh.html", "geomVector_8hh" ],
     [ "Interp4Command.hh", "Interp4Command_8hh.html", [
       [ "Interp4Command", "classInterp4Command.html", "classInterp4Command" ]
@@ -28,7 +35,14 @@ var files_dup =
     [ "MobileObj.hh", "MobileObj_8hh.html", [
       [ "MobileObj", "classMobileObj.html", "classMobileObj" ]
     ] ],
+    [ "Port.hh", "Port_8hh.html", "Port_8hh" ],
+    [ "Scene.cpp", "Scene_8cpp.html", null ],
+    [ "Scene.hh", "Scene_8hh.html", "Scene_8hh" ],
+    [ "Sender.cpp", "Sender_8cpp.html", "Sender_8cpp" ],
+    [ "Sender.hh", "Sender_8hh.html", "Sender_8hh" ],
     [ "Set4LibInterface.cpp", "Set4LibInterface_8cpp.html", null ],
     [ "Set4LibInterface.hh", "Set4LibInterface_8hh.html", "Set4LibInterface_8hh" ],
-    [ "Vector3D.hh", "Vector3D_8hh.html", "Vector3D_8hh" ]
+    [ "Vector3D.hh", "Vector3D_8hh.html", "Vector3D_8hh" ],
+    [ "xmlinterp.cpp", "xmlinterp_8cpp.html", "xmlinterp_8cpp" ],
+    [ "xmlinterp.hh", "xmlinterp_8hh.html", "xmlinterp_8hh" ]
 ];
