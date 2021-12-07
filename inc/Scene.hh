@@ -1,14 +1,12 @@
 #pragma once
 
-
-
 #include <string>
 #include <iostream>
 #include <memory>
 #include <map>
 #include "MobileObj.hh"
 #include "Vector3D.hh"
-#include "AccessControl.hh"
+#include "AccessGuard.hh"
 #include <vector>
 
 using namespace std;
@@ -27,7 +25,7 @@ typedef  map<string, shared_ptr<MobileObj>> Map_MobileObj;
  * jest to definicja klasy, która przechowuje Listę obiektów klasy MobileObj, które powinny zostać wyświetlone
  * w programie wizualizującym
  */
-class Scene: public AccessControl {
+class Scene: public AccessGuard {
 
     /*!
      * \brief Lista obiektów klasy MobileObj
@@ -53,6 +51,8 @@ public:
 
     /*!
      * \brief Metoda pozwalająca na wyszukanie obiektu o podanej nazwie
+     * 
+     * Metoda pozwalająca na wyszukanie obiektu o podanej nazwie
      * 
      * \param [in] Name_object - nazwa szukanego  obiektu
      * \retval shared_ptr<MobileObj> - wskaznik na wyszukany obiekt, zwracany w przypadku jego znalezienia
@@ -82,6 +82,8 @@ public:
      * 
      */
     vector<shared_ptr<MobileObj>> GetObjectPointer();
+
+    void PrintScene();
 
 };
 

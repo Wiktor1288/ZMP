@@ -22,8 +22,8 @@ LDFLAGS=-Wall
 
 
 
-interp: obj/main.o obj/LibInterface.o obj/Set4LibInterface.o obj/xmlinterp.o obj/Scene.o obj/Configuration.o obj/Sender.o
-	g++ ${LDFLAGS} -o interp  obj/main.o  obj/LibInterface.o obj/Set4LibInterface.o  obj/xmlinterp.o obj/Scene.o obj/Configuration.o obj/Sender.o -ldl -lxerces-c -lpthread
+interp: obj/main.o obj/LibInterface.o obj/Set4LibInterface.o obj/xmlinterp.o obj/Scene.o obj/Configuration.o obj/Sender.o obj/APIForProgram.o
+	g++ ${LDFLAGS} -o interp  obj/main.o  obj/LibInterface.o obj/Set4LibInterface.o  obj/xmlinterp.o obj/Scene.o obj/Configuration.o obj/Sender.o obj/APIForProgram.o -ldl -lxerces-c -lpthread
 	
 
 obj/main.o: src/main.cpp inc/Interp4Command.hh 
@@ -45,9 +45,11 @@ obj/Scene.o: src/Scene.cpp inc/Scene.hh
 	g++ -c ${CPPFLAGS} -o obj/Scene.o src/Scene.cpp
 
 
-obj/Sender.o: src/Sender.cpp inc/Sender.hh  inc/MobileObj.hh inc/AccessControl.hh inc/Port.hh 
+obj/Sender.o: src/Sender.cpp inc/Sender.hh  inc/MobileObj.hh inc/AccessGuard.hh inc/Port.hh 
 	g++ -c ${CPPFLAGS} -o obj/Sender.o src/Sender.cpp  -lpthread
 
+obj/APIForProgram.o: src/APIForProgram.cpp inc/APIForProgram.hh  
+	g++ -c ${CPPFLAGS} -o obj/APIForProgram.o src/APIForProgram.cpp
 
 
 clean:

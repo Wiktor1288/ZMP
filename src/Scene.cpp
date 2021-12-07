@@ -1,7 +1,9 @@
 #include "Scene.hh"
 
-Scene::Scene(Map_MobileObj &List_of_object): List_of_object(List_of_object)
-{}
+Scene::Scene(Map_MobileObj &List_of_object): List_of_object(List_of_object){
+
+    PrintScene();
+}
 
 
 shared_ptr<MobileObj> Scene::FindMobileObj(const string Name_object){
@@ -49,5 +51,18 @@ vector<shared_ptr<MobileObj>> Scene::GetObjectPointer(){
     }
 
     return object_vector;
+}
+
+void Scene::PrintScene(){
+Map_MobileObj::iterator it;
+
+  cerr << endl << "Lista obiektów:" << endl;
+
+  auto objects = this->GetObjectNames();
+
+  for (size_t i = 0; i < objects.size(); ++i)
+  {
+    cerr << "  " << objects.at(i) << endl;
+  }
 }
 

@@ -56,7 +56,7 @@ const char* Interp4Rotate::GetCmdName() const
 /*!
  *
  */
-bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
+bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj, AccessGuard *pAccGuard ) const
 {
   /*
    *  Tu trzeba napisać odpowiedni kod.

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "MobileObj.hh"
-
+#include "AccessGuard.hh"
 /*!
  * \file
  * \brief Definicja klasy Interp4Command
@@ -41,7 +41,7 @@
    /*!
     * \brief Wykonuje polecenie oraz wizualizuje jego realizację.
     */
-   virtual bool ExecCmd( MobileObj *pMobObj, int Socket ) const = 0;
+   virtual bool ExecCmd( MobileObj *pMobObj,AccessGuard *pAccGuard )  const = 0;
    /*!
     * \brief Czyta wartości parametrów danego polecenia.
     */
