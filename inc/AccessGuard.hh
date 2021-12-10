@@ -20,10 +20,26 @@ class AccessGuard {
     * \brief Zapewnia wyłączny dostęp do obiektu w trakcie modyfikacji.
     */
     std::mutex   _Guard;
-
+    
+   /*!
+    * \brief Przechowuje deskryptor pliku skojarzonym z połączeniem
+    *        sieciowym z serwerem.
+    *
+    * Przechowuje deskryptor pliku skojarzonym z połączeniem
+    * sieciowym z serwerem.
+    * Wartość poprawnego deskrytora musi być różna od 0.
+    */ 
+    int         _Socket = 0;
  public:
 
-
+  /*!
+   * \brief Udostępnia deskryptor pliku skojarzonego z połączeniem
+   *        sieciowym z serwerem.
+   *
+   *  Udostępnia deskryptor skojarzonego z połączeniem sieciowym z serwerem.
+   * \return Deskryptor pliku.
+   */
+   int GetSocket() const { return _Socket; }
   /*!
    * \brief Zamyka dostęp całej sceny i gniazda.
    */
@@ -41,6 +57,10 @@ class AccessGuard {
     *  bezpieczniejszego zamknięcia.
     */
    std::mutex &UseGuard() { return _Guard; }
+
+   void SetSocket(int _socket){
+      this->_Socket=_Socket;
+   }
 };
 
 

@@ -10,7 +10,7 @@
 #include "xmlinterp.hh"
 #include "Sender.hh"
 #include "APIForProgram.hh"
-
+#include <unistd.h>
 
 using namespace std;
 
@@ -52,7 +52,16 @@ int main(int argc, char **argv)
 
 
   auto obj_list=Config.GetObjectList();
-  APIForProgram _API_1(obj_list);
+  APIForProgram prog_1(obj_list);
+
+  
+  if(!prog_1.ExecActions(argv[1],Set_LibInterfaces)){
+    std::cerr << "Program zakończony z problemem" << std::endl;
+    return 10;
+
+  }
+
+  return 0;
   
 
 }

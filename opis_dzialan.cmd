@@ -1,11 +1,25 @@
 #define ROTATE_SPEED 30
 /*
-* Przykªadowy zestaw polece«
+* Przykładowy zestaw poleceń
 */
-Set Ob_A 2 0 30 10 0 // Polozenie obiektu A
-Set Ob_B 10 10 0 0 20 // Polozenie obiektu B
-Rotate Ob_B ROTATE_SPEED Z 40
-Pause 1000 /* Zawieszenie dziaªania na 1 sek. */
-Move Ob_A 10 10
-Rotate Ob_B ROTATE_SPEED Z 60
-Move Ob_B 10 20
+
+
+Begin_Parallel_Actions
+Move Samolot 0.2 24
+Rotate Samolot -3 OX 360
+Rotate Samolot.smiglo 30 OY 3600
+
+Rotate Blok1 20 OZ 2400
+Rotate Blok1 20 OY 2400
+Rotate Blok2 20 OX 2400
+Rotate Blok3 30 OX 3600
+Rotate Blok4 -20 OX 2400
+Rotate Blok5 -30 OX 3600
+End_Parallel_Actions
+
+
+Begin_Parallel_Actions
+Move Samolot 0.2 5
+Rotate Samolot -10 OZ 30
+Rotate Samolot.smiglo 30 OY 750
+End_Parallel_Actions

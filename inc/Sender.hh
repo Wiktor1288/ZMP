@@ -21,7 +21,6 @@ class Sender {
    * W przypadku wartości \p true, pętla wątku będzie wykonywana.
    * Natomiast wartość \p false powoduje przerwanie pętli.
    */
-   volatile bool    _ContinueLooping = true;
   /*!
    * \brief Deskryptor gniazda sieciowego, poprzez które wysyłane są polecenia.
    */
@@ -31,7 +30,7 @@ class Sender {
    *        poleceń do serwera graficzneg.
    */
    Scene *_pScn = nullptr;
-
+   bool connected;
   
  public:
  /*!
@@ -57,6 +56,12 @@ int Send(const char *sMesg);
  * Metoda pozwalająca na utworzenie połączenia z serwerem graficznym
  */
 bool OpenConnection();
+
+~Sender();
+
+int ReturnSocket(){
+  return _Socket;
+}
   
 };
 

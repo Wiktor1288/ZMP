@@ -1,9 +1,12 @@
-#pragma once
-
+#ifndef  APIFORPROGRAM_HH
+#define  APIFORPROGRAM_HH
+#include "Interp4Command.hh"
 #include "Scene.hh"
 #include "Sender.hh"
 #include "Set4LibInterface.hh"
-
+#include <thread>
+#include <sstream> 
+#define LINE_SIZE 500
 
 /*!
  * \brief Klasa APIForProgram 
@@ -55,7 +58,7 @@ class APIForProgram{
  * \retval true - jeśli preprocesor został wykonany poprawnie i nastąpiło zamknięcie pliku.
  * \retval false - Niepowodzenie wykonania.
  */
-    bool ExecPreprocesor(const   char * File_name, std::istringstream & IStrm4Cmds );
+    bool ExecPreprocesor(const   char * file_name, std::istringstream & iStrm4Cmds );
 
 public:
 
@@ -90,7 +93,8 @@ public:
  * \retval true - jeśli preprocesor został wykonany poprawnie i nastąpiło zamknięcie pliku.
  * \retval false - Niepowodzenie wykonania.
  */
-    bool ExecActions(std::istream &Str4Cmds_read, Set4LibInterface &LibInterfaces);
-
+    bool ExecActions(const char* file_name, Set4LibInterface &lib_interfaces);
 
 };
+
+#endif

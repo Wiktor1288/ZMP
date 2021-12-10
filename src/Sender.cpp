@@ -2,7 +2,13 @@
 
 
 
-
+Sender::~Sender(){
+  if (true == this->connected)
+  {
+    this->Send("Close\n");
+  }
+  close(_Socket);
+}
 
 
 
@@ -10,7 +16,7 @@ int Sender::Send( const char *sMesg)
 {
   ssize_t  IlWyslanych;
   ssize_t  IlDoWyslania = (ssize_t) strlen(sMesg);
-
+  string messs= sMesg;
   while ((IlWyslanych = write(_Socket,sMesg,IlDoWyslania)) > 0) {
     IlDoWyslania -= IlWyslanych;
     sMesg += IlWyslanych;
@@ -18,6 +24,7 @@ int Sender::Send( const char *sMesg)
   if (IlWyslanych < 0) {
     cerr << "*** Blad przeslania napisu." << endl;
   }
+  cout << "d: " << messs << "xxx\n";
   return 0;
 }
 

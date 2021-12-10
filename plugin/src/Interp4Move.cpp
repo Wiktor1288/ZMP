@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Interp4Move.hh"
 #include "MobileObj.hh"
-
+#include "network_sending.hh"
 using std::cout;
 using std::endl;
 
@@ -58,13 +58,41 @@ const char* Interp4Move::GetCmdName() const
 /*!
  *
  */
-bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  AccessGuard *pAccGuard ) const
+bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  AccessGuard * pAccCtrl , Sender *_sender) const
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
-  return true;
-}
+  int _direction, _iterations;
+  
+  if(this-> _Speed_mmS < 0 ){
+    _direction=-1;
+  }
+
+  else{
+    _direction=1;
+  }
+
+  _iterations=floor(this->_Distance_m/this->_Speed_mmS);
+
+  for(int i=0; i<_iterations; ++i){
+    pAccCtrl->LockAccess();
+    auto _position = pMobObj->GetPositoin_m();
+    auto _angle= pMobObj->GetAng_Roll_deg();
+
+    _position[0] += this->_Speed_mmS * _direction * cos(M_PI * _angle/180);
+    _position[1] += this->_Speed_mmS * _direction * sin(M_PI * _angle/180);
+
+    pMobObj->SetPosition_m(_position);
+    std::string message = "UpdateObj";
+     message += pMobObj->GetStateDesc();
+    Send2Server( _sender->ReturnSocket(),message.c_str());
+    pAccCtrl->UnlockAccess();
+     usleep(10000);
+  }
+  
+    return true;
+  }
+  
+
+
 
 
 /*!
@@ -72,7 +100,7 @@ bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  AccessGuard *pAccGuard ) const
  */
 bool Interp4Move::ReadParams(std::istream& Strm_CmdsList)
 {
-  Strm_CmdsList >> _ObjectName >> _Speed_mmS >> _Distance_m;
+  Strm_CmdsList >> _Speed_mmS >> _Distance_m;
   return !Strm_CmdsList.fail();
 }
 

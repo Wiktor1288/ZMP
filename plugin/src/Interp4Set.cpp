@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Interp4Set.hh"
 #include "MobileObj.hh"
-
+#include "network_sending.hh"
 using std::cout;
 using std::endl;
 
@@ -56,11 +56,24 @@ const char* Interp4Set::GetCmdName() const
 /*!
  *
  */
-bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  AccessGuard *pAccGuard ) const
+bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  AccessGuard * pAccCtrl , Sender *_sender) const
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+ pAccCtrl->LockAccess();
+
+  Vector3D new_position = pMobObj->GetPositoin_m();
+  new_position[0] = this->_wsp_X;
+  new_position[1] = this->_wsp_Y;
+  pMobObj->SetPosition_m(new_position);
+  pMobObj->SetAng_Roll_deg(_OX_angle);
+  pMobObj->SetAng_Pitch_deg(_OY_angle);
+  pMobObj->SetAng_Yaw_deg(_OZ_angle);
+
+  std::string message = "UpdateObj";
+  message += pMobObj->GetStateDesc();
+  Send2Server(_sender->ReturnSocket(),message.c_str());
+  pAccCtrl->UnlockAccess();
+  usleep(300000);
+
   return true;
 }
 
@@ -70,7 +83,7 @@ bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  AccessGuard *pAccGuard ) const
  */
 bool Interp4Set::ReadParams(std::istream& Strm_CmdsList)
 {
-  Strm_CmdsList >> _ObjectName >> _wsp_X >> _wsp_Y >> _OX_angle >> _OY_angle >> _OZ_angle;
+  Strm_CmdsList >> _wsp_X >> _wsp_Y >> _OX_angle >> _OY_angle >> _OZ_angle;
   return !Strm_CmdsList.fail();
 }
 

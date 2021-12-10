@@ -41,7 +41,7 @@ class Interp4Rotate: public Interp4Command {
    * 
    * nazwa osi, wokół której ma nastąpić obrót
    */
-   char _axis_name;
+   std::string _axis_name;
 
   /*!
    * \brief kąt obrotu [stopnie]
@@ -71,7 +71,7 @@ class Interp4Rotate: public Interp4Command {
   /*!
    * \brief Wykonuje polecenie oraz wizualizuje jego realizację
    */
-  virtual bool ExecCmd( MobileObj  *pMobObj, AccessGuard *pAccGuard ) const;
+  virtual bool ExecCmd( MobileObj  *pMobObj, AccessGuard * pAccCtrl , Sender *_sender) const;
   /*!
    * \brief Czyta wartości parametrów danego polecenia
    */

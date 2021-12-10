@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Interp4Pause.hh"
 #include "MobileObj.hh"
-
+#include "network_sending.hh"
 using std::cout;
 using std::endl;
 
@@ -56,11 +56,13 @@ const char* Interp4Pause::GetCmdName() const
 /*!
  *
  */
-bool Interp4Pause::ExecCmd( MobileObj  *pMobObj,  AccessGuard *pAccGuard ) const
+bool Interp4Pause::ExecCmd( MobileObj  *pMobObj, AccessGuard * pAccCtrl, Sender *_sender ) const
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+   pAccCtrl->LockAccess();
+  usleep(_pause_time * 1000);
+  pAccCtrl->UnlockAccess();
+
+
   return true;
 }
 

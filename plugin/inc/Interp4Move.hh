@@ -64,7 +64,7 @@ class Interp4Move: public Interp4Command {
   /*!
    * \brief Wykonuje polecenie oraz wizualizuje jego realizację
    */
-  virtual bool ExecCmd( MobileObj  *pMobObj, AccessGuard *pAccGuard ) const;
+  virtual bool ExecCmd( MobileObj  *pMobObj, AccessGuard * pAccCtrl, Sender *_sender) const;
   /*!
    * \brief Czyta wartości parametrów danego polecenia
    */

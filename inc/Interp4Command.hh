@@ -4,6 +4,9 @@
 #include <iostream>
 #include "MobileObj.hh"
 #include "AccessGuard.hh"
+#include <unistd.h>
+#include "Sender.hh"
+
 /*!
  * \file
  * \brief Definicja klasy Interp4Command
@@ -41,7 +44,7 @@
    /*!
     * \brief Wykonuje polecenie oraz wizualizuje jego realizację.
     */
-   virtual bool ExecCmd( MobileObj *pMobObj,AccessGuard *pAccGuard )  const = 0;
+   virtual bool ExecCmd( MobileObj *pMobObj, AccessGuard *pAccCtrl, Sender *_sender )  const = 0;
    /*!
     * \brief Czyta wartości parametrów danego polecenia.
     */
